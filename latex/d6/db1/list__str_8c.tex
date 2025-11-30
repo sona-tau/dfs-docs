@@ -1,0 +1,84 @@
+\doxysection{src/lib/list\+\_\+str.c File Reference}
+\hypertarget{list__str_8c}{}\label{list__str_8c}\index{src/lib/list\_str.c@{src/lib/list\_str.c}}
+{\ttfamily \#include "{}list\+\_\+str.\+h"{}}\newline
+{\ttfamily \#include "{}list.\+h"{}}\newline
+{\ttfamily \#include "{}log.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{list__str_8c_a8b5839f71a3b6e7d64b2d5e9967e3dd1}{BUF\+\_\+\+LEN}}~0x100
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{list__str_8c_a88b1e9858c8b0f319de2925ab434e1ac}{Impl\+List}} (\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}})
+\item 
+void \mbox{\hyperlink{list__str_8c_ae5c276a8f4a91417f8caf2b5a41c0f51}{List\+Str\+\_\+print}} (List\+Str \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}})
+\begin{DoxyCompactList}\small\item\em Print a List of Strings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{list__str_8c_a3607d5d2c18f4040997cfe091b31a0fc}{List\+Safe\+Str\+\_\+serialize}} (List\+Safe\+Str \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}})
+\item 
+List\+Safe\+Str \mbox{\hyperlink{list__str_8c_aca6d212cf8b9de7c79f5a8e1f920b91d}{List\+Safe\+Str\+\_\+deserialize}} (\mbox{\hyperlink{structBuffer}{Buffer}} buf)
+\begin{DoxyCompactList}\small\item\em Deserialize a \doxylink{structSafeStr}{Safe\+Str} from a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{list__str_8c_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{list__str_8c_a8b5839f71a3b6e7d64b2d5e9967e3dd1}\index{list\_str.c@{list\_str.c}!BUF\_LEN@{BUF\_LEN}}
+\index{BUF\_LEN@{BUF\_LEN}!list\_str.c@{list\_str.c}}
+\doxysubsubsection{\texorpdfstring{BUF\_LEN}{BUF\_LEN}}
+{\footnotesize\ttfamily \label{list__str_8c_a8b5839f71a3b6e7d64b2d5e9967e3dd1} 
+\#define BUF\+\_\+\+LEN~0x100}
+
+
+
+\label{doc-func-members}
+\Hypertarget{list__str_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{list__str_8c_a88b1e9858c8b0f319de2925ab434e1ac}\index{list\_str.c@{list\_str.c}!ImplList@{ImplList}}
+\index{ImplList@{ImplList}!list\_str.c@{list\_str.c}}
+\doxysubsubsection{\texorpdfstring{ImplList()}{ImplList()}}
+{\footnotesize\ttfamily \label{list__str_8c_a88b1e9858c8b0f319de2925ab434e1ac} 
+Impl\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list__str_8c_aca6d212cf8b9de7c79f5a8e1f920b91d}\index{list\_str.c@{list\_str.c}!ListSafeStr\_deserialize@{ListSafeStr\_deserialize}}
+\index{ListSafeStr\_deserialize@{ListSafeStr\_deserialize}!list\_str.c@{list\_str.c}}
+\doxysubsubsection{\texorpdfstring{ListSafeStr\_deserialize()}{ListSafeStr\_deserialize()}}
+{\footnotesize\ttfamily \label{list__str_8c_aca6d212cf8b9de7c79f5a8e1f920b91d} 
+List\+Safe\+Str List\+Safe\+Str\+\_\+deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buf}{}\end{DoxyParamCaption})}
+
+
+
+Deserialize a \doxylink{structSafeStr}{Safe\+Str} from a \doxylink{structBuffer}{Buffer}. 
+
+WARNING\+: Do NOT deinitialize this using List\+Safe\+Str\+\_\+deinit. You must manually deinitialize the strings inside the list and then the whole list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & a \doxylink{structBuffer}{Buffer} containing the Safe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a List of \doxylink{structSafeStr}{Safe\+Str} 
+\end{DoxyReturn}
+\Hypertarget{list__str_8c_a3607d5d2c18f4040997cfe091b31a0fc}\index{list\_str.c@{list\_str.c}!ListSafeStr\_serialize@{ListSafeStr\_serialize}}
+\index{ListSafeStr\_serialize@{ListSafeStr\_serialize}!list\_str.c@{list\_str.c}}
+\doxysubsubsection{\texorpdfstring{ListSafeStr\_serialize()}{ListSafeStr\_serialize()}}
+{\footnotesize\ttfamily \label{list__str_8c_a3607d5d2c18f4040997cfe091b31a0fc} 
+\mbox{\hyperlink{structBuffer}{Buffer}} List\+Safe\+Str\+\_\+serialize (\begin{DoxyParamCaption}\item[{List\+Safe\+Str}]{list}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list__str_8c_ae5c276a8f4a91417f8caf2b5a41c0f51}\index{list\_str.c@{list\_str.c}!ListStr\_print@{ListStr\_print}}
+\index{ListStr\_print@{ListStr\_print}!list\_str.c@{list\_str.c}}
+\doxysubsubsection{\texorpdfstring{ListStr\_print()}{ListStr\_print()}}
+{\footnotesize\ttfamily \label{list__str_8c_ae5c276a8f4a91417f8caf2b5a41c0f51} 
+void List\+Str\+\_\+print (\begin{DoxyParamCaption}\item[{List\+Str}]{list}{}\end{DoxyParamCaption})}
+
+
+
+Print a List of Strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the list to print \\
+\hline
+\end{DoxyParams}

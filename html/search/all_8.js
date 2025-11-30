@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['id1_0',['id1',['../da/dd4/structUUID.html#a1edb243756108f3349e1e983fad1656a',1,'UUID']]],
+  ['id2_1',['id2',['../da/dd4/structUUID.html#a8703cb1e28f1a614e0c5e05685ba1671',1,'UUID']]],
+  ['id3_2',['id3',['../da/dd4/structUUID.html#ab95623f630cf4e294aa1d058469fb4e8',1,'UUID']]],
+  ['id4_3',['id4',['../da/dd4/structUUID.html#afd9b0734d078838b64142745d920dbc1',1,'UUID']]],
+  ['id5_4',['id5',['../da/dd4/structUUID.html#a6f42b7626acd78205841affbf7c751ee',1,'UUID']]],
+  ['impllist_5',['ImplList',['../da/d23/list_8h.html#af0aa70681071e9652f5782ea50c168f4',1,'ImplList:&#160;list.h'],['../d3/d1c/block_8c.html#ae2a4d956c511fd3caf4f7e462559b471',1,'ImplList(Block):&#160;block.c'],['../df/d59/dnode_8c.html#ad8ed25a114c5a75c9623d17588d858bc',1,'ImplList(DNode):&#160;dnode.c'],['../d8/d2b/inode_8c.html#a3acb6d5271b21129b9562db6f1fcc46f',1,'ImplList(INode):&#160;inode.c'],['../de/dd7/lib_8c.html#af072833d1927aefb48a91105be0bbf15',1,'ImplList(Buffer):&#160;lib.c'],['../d6/db1/list__str_8c.html#a88b1e9858c8b0f319de2925ab434e1ac',1,'ImplList(Str):&#160;list_str.c'],['../df/da9/uuid_8c.html#a10cda09a8f7b96869959942d660c6a29',1,'ImplList(HexByte):&#160;uuid.c']]],
+  ['info_6',['INFO',['../d7/d7f/log_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806',1,'log.h']]],
+  ['inode_7',['INode',['../d7/d53/structINode.html',1,'']]],
+  ['inode_2ec_8',['inode.c',['../d8/d2b/inode_8c.html',1,'']]],
+  ['inode_2eh_9',['inode.h',['../d3/d73/inode_8h.html',1,'']]],
+  ['inode_5fdeserialize_10',['INode_deserialize',['../d8/d2b/inode_8c.html#a8171e0b24b5bac9bd864ad7cae07cd07',1,'INode_deserialize(Buffer buf):&#160;inode.c'],['../d3/d73/inode_8h.html#a8171e0b24b5bac9bd864ad7cae07cd07',1,'INode_deserialize(Buffer buf):&#160;inode.c']]],
+  ['inode_5fget_5fdb_11',['INode_get_db',['../d8/d2b/inode_8c.html#a92a62fb0b3c30207562e008f6a537f20',1,'INode_get_db(void):&#160;inode.c'],['../d3/d73/inode_8h.html#a92a62fb0b3c30207562e008f6a537f20',1,'INode_get_db(void):&#160;inode.c']]],
+  ['inode_5fserialize_12',['INode_serialize',['../d8/d2b/inode_8c.html#a190cae1508a7263501c63c91870d943e',1,'inode.c']]],
+  ['inode_5fset_5fdb_13',['INode_set_db',['../d8/d2b/inode_8c.html#ac1dd66bbe5163cecedc71b65010fa365',1,'INode_set_db(ListINode dnodes):&#160;inode.c'],['../d3/d73/inode_8h.html#a80f2fb3a70b49db9b17d8a01d3347712',1,'INode_set_db(ListINode inodes):&#160;inode.c']]],
+  ['inode_5ftable_14',['INODE_TABLE',['../d3/d73/inode_8h.html#ad10938a3416f4b8d30691ce36f3b2010',1,'inode.h']]],
+  ['insert_15',['insert',['../df/d59/dnode_8c.html#ab802880fd29ce583effe8bc2874b2d16',1,'insert(ListDNodeInfo l, DNodeInfo a):&#160;dnode.c'],['../d3/d86/dnode_8h.html#ab802880fd29ce583effe8bc2874b2d16',1,'insert(ListDNodeInfo l, DNodeInfo a):&#160;dnode.c']]],
+  ['insert_5ffile_16',['insert_file',['../d0/d2c/testdb_8c.html#a8a01ff0f021a126def8986a1233a0923',1,'testdb.c']]],
+  ['insert_5finto_5fblock_17',['insert_into_block',['../d3/d1c/block_8c.html#aa3d285f3325f1d3b4c7ae1edab51c3c4',1,'insert_into_block(UUID *fid, UUID *nid, UUID *cid, size_t *seq):&#160;block.c'],['../de/d40/block_8h.html#aa3d285f3325f1d3b4c7ae1edab51c3c4',1,'insert_into_block(UUID *fid, UUID *nid, UUID *cid, size_t *seq):&#160;block.c']]],
+  ['insert_5finto_5fdnode_18',['insert_into_dnode',['../df/d59/dnode_8c.html#aacb4971a9663c6bf602f184077214974',1,'insert_into_dnode(IPv4 address, Port port):&#160;dnode.c'],['../d3/d86/dnode_8h.html#aacb4971a9663c6bf602f184077214974',1,'insert_into_dnode(IPv4 address, Port port):&#160;dnode.c']]],
+  ['insert_5finto_5finode_19',['insert_into_inode',['../d8/d2b/inode_8c.html#a9dd29a3f0501bd2237ccb125b6d6353f',1,'insert_into_inode(SafeStr fname, size_t size):&#160;inode.c'],['../d3/d73/inode_8h.html#a9dd29a3f0501bd2237ccb125b6d6353f',1,'insert_into_inode(SafeStr fname, size_t size):&#160;inode.c']]],
+  ['ip_20',['ip',['../de/d5f/unionIPv4.html#a7723d6cb1c180b0399e30f141e9d715d',1,'IPv4']]],
+  ['ipv4_21',['IPv4',['../de/d5f/unionIPv4.html',1,'']]],
+  ['ipv4_5fdeserialize_22',['IPv4_deserialize',['../dc/d86/enchufe_8c.html#a9455f208539ce7a689ffd06224d25e45',1,'IPv4_deserialize(Buffer buf):&#160;enchufe.c'],['../df/d43/enchufe_8h.html#a9455f208539ce7a689ffd06224d25e45',1,'IPv4_deserialize(Buffer buf):&#160;enchufe.c']]],
+  ['ipv4_5fserialize_23',['IPv4_serialize',['../dc/d86/enchufe_8c.html#a912a7b5868ecf198d31625bb5fca110c',1,'IPv4_serialize(IPv4 ip):&#160;enchufe.c'],['../df/d43/enchufe_8h.html#a912a7b5868ecf198d31625bb5fca110c',1,'IPv4_serialize(IPv4 ip):&#160;enchufe.c']]]
+];

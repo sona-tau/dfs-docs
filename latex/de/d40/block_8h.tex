@@ -1,0 +1,216 @@
+\doxysection{src/lib/block.h File Reference}
+\hypertarget{block_8h}{}\label{block_8h}\index{src/lib/block.h@{src/lib/block.h}}
+{\ttfamily \#include "{}uuid.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structBlock}{Block}}
+\begin{DoxyCompactList}\small\item\em Associates a \doxylink{structDNode}{DNode}\textquotesingle{}s connection data with an \doxylink{structINode}{INode}\textquotesingle{}s data and the data on disk at cid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{block_8h_aae267209d11547d50a511c03ac5033d4}{BLOCK\+\_\+\+TABLE}}~"{}data/block.\+bin"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{block_8h_ace706ebb19f3601173a7b072baec78b4}{Def\+List}} (\mbox{\hyperlink{structBlock}{Block}}) \mbox{\hyperlink{structBuffer}{Buffer}} Block\+\_\+serialize(\mbox{\hyperlink{structBlock}{Block}} block)
+\begin{DoxyCompactList}\small\item\em Serialize a \doxylink{structBlock}{Block} into a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBlock}{Block}} \mbox{\hyperlink{block_8h_a1aebff81374f63da7e64622d7bba5094}{Block\+\_\+deserialize}} (\mbox{\hyperlink{structBuffer}{Buffer}} buffer)
+\begin{DoxyCompactList}\small\item\em Deserialize a \doxylink{structBuffer}{Buffer} into a block. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{block_8h_a826f068ea7ae8abbd3b99bb6ff9e1206}{List\+Block\+\_\+serialize}} (List\+Block \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}})
+\begin{DoxyCompactList}\small\item\em Serialize a List of \doxylink{structBlock}{Block}\textquotesingle{}s into a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+List\+Block \mbox{\hyperlink{block_8h_ae2af63a53209c58ca06fa2b04f7cb7b8}{List\+Block\+\_\+deserialize}} (\mbox{\hyperlink{structBuffer}{Buffer}} buf)
+\begin{DoxyCompactList}\small\item\em Deserialize a \doxylink{structBuffer}{Buffer} into a List of \doxylink{structBlock}{Block}\textquotesingle{}s. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{block_8h_aa3d285f3325f1d3b4c7ae1edab51c3c4}{insert\+\_\+into\+\_\+block}} (\mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}fid, \mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}nid, \mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}cid, size\+\_\+t \texorpdfstring{$\ast$}{*}seq)
+\begin{DoxyCompactList}\small\item\em INSERT into the \doxylink{structBlock}{Block} table. \end{DoxyCompactList}\item 
+List\+Block \mbox{\hyperlink{block_8h_a1576b0b360316ac9b2130009453d8c18}{select\+\_\+from\+\_\+block}} (\mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}bid, \mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}fid, \mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}nid, \mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}cid, size\+\_\+t \texorpdfstring{$\ast$}{*}seq)
+\begin{DoxyCompactList}\small\item\em SELECT from the \doxylink{structBlock}{Block} table. \end{DoxyCompactList}\item 
+List\+Block \mbox{\hyperlink{block_8h_afb7216b1a3653ec46941c71d1c762931}{Block\+\_\+get\+\_\+db}} (void)
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{structBlock}{Block} table from the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{block_8h_af52b3fe05781a9b2e0c45fcc1e2b6229}{Block\+\_\+set\+\_\+db}} (List\+Block blocks)
+\begin{DoxyCompactList}\small\item\em Write the database with the List of \doxylink{structBlock}{Block}\textquotesingle{}s. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{block_8h_a320b7fa3328cff14471b4c8913635b02}{print\+\_\+block}} (\mbox{\hyperlink{structBlock}{Block}} block)
+\begin{DoxyCompactList}\small\item\em Print a \doxylink{structBlock}{Block}\textquotesingle{}s data as a tuple. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{block_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{block_8h_aae267209d11547d50a511c03ac5033d4}\index{block.h@{block.h}!BLOCK\_TABLE@{BLOCK\_TABLE}}
+\index{BLOCK\_TABLE@{BLOCK\_TABLE}!block.h@{block.h}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_TABLE}{BLOCK\_TABLE}}
+{\footnotesize\ttfamily \label{block_8h_aae267209d11547d50a511c03ac5033d4} 
+\#define BLOCK\+\_\+\+TABLE~"{}data/block.\+bin"{}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{block_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{block_8h_a1aebff81374f63da7e64622d7bba5094}\index{block.h@{block.h}!Block\_deserialize@{Block\_deserialize}}
+\index{Block\_deserialize@{Block\_deserialize}!block.h@{block.h}}
+\doxysubsubsection{\texorpdfstring{Block\_deserialize()}{Block\_deserialize()}}
+{\footnotesize\ttfamily \label{block_8h_a1aebff81374f63da7e64622d7bba5094} 
+\mbox{\hyperlink{structBlock}{Block}} Block\+\_\+deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+Deserialize a \doxylink{structBuffer}{Buffer} into a block. 
+
+Caller must free memory in \doxylink{structBlock_afbc128c4f66b70918d08ab663f8a5171}{Block.\+cid}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The \doxylink{structBuffer}{Buffer} you want to deserialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{structBlock}{Block} that the \doxylink{structBuffer}{Buffer} represents 
+\end{DoxyReturn}
+\Hypertarget{block_8h_afb7216b1a3653ec46941c71d1c762931}\index{block.h@{block.h}!Block\_get\_db@{Block\_get\_db}}
+\index{Block\_get\_db@{Block\_get\_db}!block.h@{block.h}}
+\doxysubsubsection{\texorpdfstring{Block\_get\_db()}{Block\_get\_db()}}
+{\footnotesize\ttfamily \label{block_8h_afb7216b1a3653ec46941c71d1c762931} 
+List\+Block Block\+\_\+get\+\_\+db (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get the \doxylink{structBlock}{Block} table from the database. 
+
+\begin{DoxyReturn}{Returns}
+a List of \doxylink{structBlock}{Block}\textquotesingle{}s 
+\end{DoxyReturn}
+\Hypertarget{block_8h_af52b3fe05781a9b2e0c45fcc1e2b6229}\index{block.h@{block.h}!Block\_set\_db@{Block\_set\_db}}
+\index{Block\_set\_db@{Block\_set\_db}!block.h@{block.h}}
+\doxysubsubsection{\texorpdfstring{Block\_set\_db()}{Block\_set\_db()}}
+{\footnotesize\ttfamily \label{block_8h_af52b3fe05781a9b2e0c45fcc1e2b6229} 
+void Block\+\_\+set\+\_\+db (\begin{DoxyParamCaption}\item[{List\+Block}]{blocks}{}\end{DoxyParamCaption})}
+
+
+
+Write the database with the List of \doxylink{structBlock}{Block}\textquotesingle{}s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em blocks} & the List of \doxylink{structBlock}{Block}\textquotesingle{}s that you want to overwrite the database with \\
+\hline
+\end{DoxyParams}
+\Hypertarget{block_8h_ace706ebb19f3601173a7b072baec78b4}\index{block.h@{block.h}!DefList@{DefList}}
+\index{DefList@{DefList}!block.h@{block.h}}
+\doxysubsubsection{\texorpdfstring{DefList()}{DefList()}}
+{\footnotesize\ttfamily \label{block_8h_ace706ebb19f3601173a7b072baec78b4} 
+Def\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBlock}{Block}}}]{}{}\end{DoxyParamCaption})}
+
+
+
+Serialize a \doxylink{structBlock}{Block} into a \doxylink{structBuffer}{Buffer}. 
+
+Caller must free memory in \doxylink{structBuffer_a4ff8cd56bcbabbe3f65391f83d2c871a}{Buffer.\+buf}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & the \doxylink{structBlock}{Block} you want to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \doxylink{structBuffer}{Buffer} that the \doxylink{structBlock}{Block} represents 
+\end{DoxyReturn}
+\Hypertarget{block_8h_aa3d285f3325f1d3b4c7ae1edab51c3c4}\index{block.h@{block.h}!insert\_into\_block@{insert\_into\_block}}
+\index{insert\_into\_block@{insert\_into\_block}!block.h@{block.h}}
+\doxysubsubsection{\texorpdfstring{insert\_into\_block()}{insert\_into\_block()}}
+{\footnotesize\ttfamily \label{block_8h_aa3d285f3325f1d3b4c7ae1edab51c3c4} 
+void insert\+\_\+into\+\_\+block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}}]{fid}{, }\item[{\mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}}]{nid}{, }\item[{\mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}}]{cid}{, }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{seq}{}\end{DoxyParamCaption})}
+
+
+
+INSERT into the \doxylink{structBlock}{Block} table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fid} & \doxylink{structUUID}{UUID} of file\textquotesingle{}s \doxylink{structINode}{INode} or NULL \\
+\hline
+{\em nid} & \doxylink{structUUID}{UUID} of \doxylink{structDNode}{DNode} or NULL \\
+\hline
+{\em cid} & string representing \doxylink{structBlock}{Block}\textquotesingle{}s chunk ID or NULL \\
+\hline
+\end{DoxyParams}
+\Hypertarget{block_8h_ae2af63a53209c58ca06fa2b04f7cb7b8}\index{block.h@{block.h}!ListBlock\_deserialize@{ListBlock\_deserialize}}
+\index{ListBlock\_deserialize@{ListBlock\_deserialize}!block.h@{block.h}}
+\doxysubsubsection{\texorpdfstring{ListBlock\_deserialize()}{ListBlock\_deserialize()}}
+{\footnotesize\ttfamily \label{block_8h_ae2af63a53209c58ca06fa2b04f7cb7b8} 
+List\+Block List\+Block\+\_\+deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buf}{}\end{DoxyParamCaption})}
+
+
+
+Deserialize a \doxylink{structBuffer}{Buffer} into a List of \doxylink{structBlock}{Block}\textquotesingle{}s. 
+
+Caller must free memory in \doxylink{structBlock_afbc128c4f66b70918d08ab663f8a5171}{Block.\+cid}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The \doxylink{structBuffer}{Buffer} you want to deserialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The List of \doxylink{structBlock}{Block}\textquotesingle{}s that the \doxylink{structBuffer}{Buffer} represents 
+\end{DoxyReturn}
+\Hypertarget{block_8h_a826f068ea7ae8abbd3b99bb6ff9e1206}\index{block.h@{block.h}!ListBlock\_serialize@{ListBlock\_serialize}}
+\index{ListBlock\_serialize@{ListBlock\_serialize}!block.h@{block.h}}
+\doxysubsubsection{\texorpdfstring{ListBlock\_serialize()}{ListBlock\_serialize()}}
+{\footnotesize\ttfamily \label{block_8h_a826f068ea7ae8abbd3b99bb6ff9e1206} 
+\mbox{\hyperlink{structBuffer}{Buffer}} List\+Block\+\_\+serialize (\begin{DoxyParamCaption}\item[{List\+Block}]{list}{}\end{DoxyParamCaption})}
+
+
+
+Serialize a List of \doxylink{structBlock}{Block}\textquotesingle{}s into a \doxylink{structBuffer}{Buffer}. 
+
+Caller must free memory in \doxylink{structBuffer_a4ff8cd56bcbabbe3f65391f83d2c871a}{Buffer.\+buf}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the List of \doxylink{structBlock}{Block}\textquotesingle{}s that you want to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \doxylink{structBuffer}{Buffer} that the List\+Block represents 
+\end{DoxyReturn}
+\Hypertarget{block_8h_a320b7fa3328cff14471b4c8913635b02}\index{block.h@{block.h}!print\_block@{print\_block}}
+\index{print\_block@{print\_block}!block.h@{block.h}}
+\doxysubsubsection{\texorpdfstring{print\_block()}{print\_block()}}
+{\footnotesize\ttfamily \label{block_8h_a320b7fa3328cff14471b4c8913635b02} 
+void print\+\_\+block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBlock}{Block}}}]{block}{}\end{DoxyParamCaption})}
+
+
+
+Print a \doxylink{structBlock}{Block}\textquotesingle{}s data as a tuple. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & the \doxylink{structBlock}{Block} to be printed \\
+\hline
+\end{DoxyParams}
+\Hypertarget{block_8h_a1576b0b360316ac9b2130009453d8c18}\index{block.h@{block.h}!select\_from\_block@{select\_from\_block}}
+\index{select\_from\_block@{select\_from\_block}!block.h@{block.h}}
+\doxysubsubsection{\texorpdfstring{select\_from\_block()}{select\_from\_block()}}
+{\footnotesize\ttfamily \label{block_8h_a1576b0b360316ac9b2130009453d8c18} 
+List\+Block select\+\_\+from\+\_\+block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}}]{bid}{, }\item[{\mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}}]{fid}{, }\item[{\mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}}]{nid}{, }\item[{\mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}}]{cid}{, }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{seq}{}\end{DoxyParamCaption})}
+
+
+
+SELECT from the \doxylink{structBlock}{Block} table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bid} & the \doxylink{structBlock}{Block}\textquotesingle{}s \doxylink{structUUID}{UUID} or NULL \\
+\hline
+{\em fid} & the \doxylink{structBlock}{Block}\textquotesingle{}s \doxylink{structINode}{INode}\textquotesingle{}s file\textquotesingle{}s \doxylink{structUUID}{UUID} or NULL \\
+\hline
+{\em nid} & the \doxylink{structBlock}{Block}\textquotesingle{}s \doxylink{structDNode}{DNode}\textquotesingle{}s \doxylink{structUUID}{UUID} or NULL \\
+\hline
+{\em cid} & the \doxylink{structBlock}{Block}\textquotesingle{}s chunk ID or NULL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a List\+Block of the possible matches 
+\end{DoxyReturn}

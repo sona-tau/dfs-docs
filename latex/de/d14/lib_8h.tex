@@ -1,0 +1,872 @@
+\doxysection{src/lib/lib.h File Reference}
+\hypertarget{lib_8h}{}\label{lib_8h}\index{src/lib/lib.h@{src/lib/lib.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}list.\+h"{}}\newline
+{\ttfamily \#include "{}log.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSafeStr}{Safe\+Str}}
+\begin{DoxyCompactList}\small\item\em Safe String type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structBuffer}{Buffer}}
+\begin{DoxyCompactList}\small\item\em \doxylink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte} buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lib_8h_a7a12fc7ef7b16fca391e969438ebb08a}{try}}(a)
+\begin{DoxyCompactList}\small\item\em Macro para probar si un numero es negativo. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{lib_8h_aed1cedd0dde8f3a68ada1860dc05c810}{exists}}(a)
+\begin{DoxyCompactList}\small\item\em Macro para detectar si un pointer es NULL. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{lib_8h_ac610b33ec571920dfe1c0f5d93f60516}{TODO}}
+\begin{DoxyCompactList}\small\item\em Macro for marking parts that have not been implemented. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{lib_8h_ab1d971c22ee147f4ef6d4ce357d2007d}{expect}}(cond, ...)
+\begin{DoxyCompactList}\small\item\em Macro para crashear el programa si una condicion no se cumple. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{lib_8h_aa866fef1d1e97ece94063a9851afd1f9}{KB4}}~0x1000
+\begin{DoxyCompactList}\small\item\em cuatro kilobytes \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{lib_8h_aea3cfda4f3a9f978ec759f206cf186fe}{CHUNK\+\_\+\+SIZE}}~0x400
+\begin{DoxyCompactList}\small\item\em un solo kilobyte \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte}}
+\begin{DoxyCompactList}\small\item\em Simple \doxylink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte} type. Guaranteed to be exactly 8 bits. \end{DoxyCompactList}\item 
+typedef const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}
+\begin{DoxyCompactList}\small\item\em String type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lib_8h_a3d8e8e36bf4626bce1786f0cb3de93f2}{copy}} (\mbox{\hyperlink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte}} \texorpdfstring{$\ast$}{*}src, size\+\_\+t nbytes)
+\begin{DoxyCompactList}\small\item\em \doxylink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte} by \doxylink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte} copy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{lib_8h_a916415c4e091e39d1e117cefab644c40}{Def\+List}} (\mbox{\hyperlink{structBuffer}{Buffer}}) typedef struct
+\begin{DoxyCompactList}\small\item\em This is the buffer that lazily opens the file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{lib_8h_a20ae1ac2b6a0366de82fb8a74aaff232}{mkdir\+\_\+p}} (\mbox{\hyperlink{structSafeStr}{Safe\+Str}} fpath, mode\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Recursively create directories. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{lib_8h_a915441aea5cc675775651f5918cb1ed1}{Lazy\+Buffer}} \mbox{\hyperlink{lib_8h_a5f359d7cd188ef26212022cef9702ca9}{open}} (\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}} fpath)
+\begin{DoxyCompactList}\small\item\em Open a Lazy\+Buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{lib_8h_a915441aea5cc675775651f5918cb1ed1}{Lazy\+Buffer}} \mbox{\hyperlink{lib_8h_a098c96ef08b2936a08e1579441a2d879}{next\+\_\+chunk}} (\mbox{\hyperlink{lib_8h_a915441aea5cc675775651f5918cb1ed1}{Lazy\+Buffer}} b)
+\begin{DoxyCompactList}\small\item\em Reads the next chunk of the file, if it can. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{lib_8h_a51bed6025eb58730de18765ca2345b81}{Buffer\+\_\+serialize}} (\mbox{\hyperlink{structBuffer}{Buffer}} buf)
+\begin{DoxyCompactList}\small\item\em Serialize a \doxylink{structBuffer}{Buffer} to a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{lib_8h_abf1ac083dd4b229fcd24e742dbb8be80}{Buffer\+\_\+deserialize}} (\mbox{\hyperlink{structBuffer}{Buffer}} buf)
+\begin{DoxyCompactList}\small\item\em Deserialize a \doxylink{structBuffer}{Buffer} from a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{lib_8h_ad526a2d2d89313e6fa8d4358a8f1e271}{List\+Buffer\+\_\+serialize}} (List\+Buffer \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}})
+\begin{DoxyCompactList}\small\item\em Serialize a List of \doxylink{structBuffer}{Buffer}\textquotesingle{}s to a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+List\+Buffer \mbox{\hyperlink{lib_8h_af652eca0072d791746db054e1c23f95e}{List\+Buffer\+\_\+deserialize}} (\mbox{\hyperlink{structBuffer}{Buffer}} buf)
+\begin{DoxyCompactList}\small\item\em Deserialize a List\+Buffer from a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{lib_8h_ac4734c81c889a8abf1833ebae219fc21}{to\+\_\+buffer}} (const void \texorpdfstring{$\ast$}{*}thing, size\+\_\+t nbytes)
+\begin{DoxyCompactList}\small\item\em Convert a thing to a buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{lib_8h_af166da8a585c08e40990cf9ac7f24302}{uint8\+\_\+t\+\_\+serialize}} (uint8\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Serialize a uint8\+\_\+t to a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{lib_8h_ac2e833c12254d0640bda7307d4b31e5c}{uint8\+\_\+t\+\_\+deserialize}} (\mbox{\hyperlink{structBuffer}{Buffer}} buf)
+\begin{DoxyCompactList}\small\item\em Deserialize a uint8\+\_\+t from a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{lib_8h_abc960393a951fdd9cf81fd5d3023e84f}{uint16\+\_\+t\+\_\+serialize}} (uint16\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Serialize a uint16\+\_\+t to a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{lib_8h_a083e5dd7aba03cbceec5300b6c65539b}{uint16\+\_\+t\+\_\+deserialize}} (\mbox{\hyperlink{structBuffer}{Buffer}} buf)
+\begin{DoxyCompactList}\small\item\em Deserialize a uint16\+\_\+t from a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{lib_8h_a19ad6eb62f77df23fe23457589df10d1}{uint32\+\_\+t\+\_\+serialize}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Serialize a uint32\+\_\+t to a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{lib_8h_add987af6ff87802e646925d3daa64f93}{uint32\+\_\+t\+\_\+deserialize}} (\mbox{\hyperlink{structBuffer}{Buffer}} buf)
+\begin{DoxyCompactList}\small\item\em Deserialize a uint32\+\_\+t from a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{lib_8h_a1ecea5510fe72bfb284cfd6d06daf271}{atob}} (\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}} str)
+\begin{DoxyCompactList}\small\item\em Converts a CString to a \doxylink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte} \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{lib_8h_a3cf2e8b3b546d5c54208d6f27cbd2635}{validate\+\_\+str}} (\mbox{\hyperlink{structBuffer}{Buffer}} str, size\+\_\+t max\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Validates that a string received through a Socket is correct. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{lib_8h_aa82a9584462ff3fe04acdb64c02517ca}{bufcpy}} (\mbox{\hyperlink{structBuffer}{Buffer}} in)
+\begin{DoxyCompactList}\small\item\em Make a copy of a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{lib_8h_a92d26c61ccfaa4adac48843cb08ba47d}{safe\+\_\+strlen}} (\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}} str, size\+\_\+t max\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Does an strlen using a max size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lib_8h_abea6c77ac79ee2ff6259366f1e95becc}{Buffer\+\_\+deinit}} (\mbox{\hyperlink{structBuffer}{Buffer}} kod)
+\begin{DoxyCompactList}\small\item\em Deinitializes a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lib_8h_aa1b70d8019362ca051b93f53af180195}{Buffer\+\_\+write}} (\mbox{\hyperlink{structBuffer}{Buffer}} buf, FILE \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em Writes data from a \doxylink{structBuffer}{Buffer} to a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{lib_8h_a6e3b3a962ce386c662c53fe3552443de}{Buffer\+\_\+read}} (FILE \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em Reads data from a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{lib_8h_aa8347078f332063b2500e7c887ce4270}{Safe\+Str\+\_\+serialize}} (\mbox{\hyperlink{structSafeStr}{Safe\+Str}} str)
+\begin{DoxyCompactList}\small\item\em Serializes a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structSafeStr}{Safe\+Str}} \mbox{\hyperlink{lib_8h_ab264e0379921fedd7bd2e258334cfcbc}{Safe\+Str\+\_\+deserialize}} (\mbox{\hyperlink{structBuffer}{Buffer}} buf)
+\begin{DoxyCompactList}\small\item\em Deserializes a string from a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{lib_8h_ac4594c5f5a4579750bf0c6c36eac71f4}{size\+\_\+t\+\_\+serialize}} (size\+\_\+t a)
+\begin{DoxyCompactList}\small\item\em Serializes a size\+\_\+t length. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{lib_8h_a549d08a5d8773c64f21bc7619fced808}{size\+\_\+t\+\_\+deserialize}} (\mbox{\hyperlink{structBuffer}{Buffer}} buf)
+\begin{DoxyCompactList}\small\item\em Deserializes a size\+\_\+t length. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{lib_8h_a5a5f0715494fc965811a77209e434380}{concat}} (\mbox{\hyperlink{structBuffer}{Buffer}} fst, \mbox{\hyperlink{structBuffer}{Buffer}} snd)
+\begin{DoxyCompactList}\small\item\em Concatenate two \doxylink{structBuffer}{Buffer}\textquotesingle{}s. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{lib_8h_a4e678b2276c57362fdc4de4b9308193d}{Str\+\_\+eq}} (\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}} lhs, \mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}} rhs)
+\begin{DoxyCompactList}\small\item\em Compares two strings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structSafeStr}{Safe\+Str}} \mbox{\hyperlink{lib_8h_aae55ef6e7cc40e2f55de0126252f718b}{atoss}} (\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}} str)
+\begin{DoxyCompactList}\small\item\em Convert a string literal to a safe string WARNING\+: DO NOT USE THIS TO CONVERT THINGS THAT ARE NOT STRING LITERALS! \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{lib_8h_ad2d6d3319572e13e9ff038c4281b1f88}{min}} (size\+\_\+t l, size\+\_\+t r)
+\begin{DoxyCompactList}\small\item\em Simply returns the minimum of the two. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lib_8h_a915441aea5cc675775651f5918cb1ed1}{Lazy\+Buffer}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{lib_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{lib_8h_aea3cfda4f3a9f978ec759f206cf186fe}\index{lib.h@{lib.h}!CHUNK\_SIZE@{CHUNK\_SIZE}}
+\index{CHUNK\_SIZE@{CHUNK\_SIZE}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{CHUNK\_SIZE}{CHUNK\_SIZE}}
+{\footnotesize\ttfamily \label{lib_8h_aea3cfda4f3a9f978ec759f206cf186fe} 
+\#define CHUNK\+\_\+\+SIZE~0x400}
+
+
+
+un solo kilobyte 
+
+\Hypertarget{lib_8h_aed1cedd0dde8f3a68ada1860dc05c810}\index{lib.h@{lib.h}!exists@{exists}}
+\index{exists@{exists}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{exists}{exists}}
+{\footnotesize\ttfamily \label{lib_8h_aed1cedd0dde8f3a68ada1860dc05c810} 
+\#define exists(\begin{DoxyParamCaption}\item[{}]{a}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if\ ((a)\ ==\ NULL)\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ log(\mbox{\hyperlink{log_8h_aca1fd1d8935433e6ba2e3918214e07f9a651d8a47a6976d6fe05c0e03fb4cd2d0}{FATAL}},\ \textcolor{stringliteral}{"{}\%s:\%s:\%d\ Null\ pointer\ encountered,\ \%s\(\backslash\)n"{}},\ \_\_FILE\_\_,\ \_\_func\_\_,\ \_\_LINE\_\_,\ strerror(errno));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ exit\ (EXIT\_FAILURE);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Macro para detectar si un pointer es NULL. 
+
+Usa esta funcion si prefieres crashear el programa cuando encuetras un puntero NULL. \Hypertarget{lib_8h_ab1d971c22ee147f4ef6d4ce357d2007d}\index{lib.h@{lib.h}!expect@{expect}}
+\index{expect@{expect}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{expect}{expect}}
+{\footnotesize\ttfamily \label{lib_8h_ab1d971c22ee147f4ef6d4ce357d2007d} 
+\#define expect(\begin{DoxyParamCaption}\item[{}]{cond}{, }\item[{}]{}...{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (!(cond))\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ fprintf(stderr,\ \_\_VA\_ARGS\_\_);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ exit(EXIT\_FAILURE);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{while}\ (0)}
+
+\end{DoxyCode}
+
+
+Macro para crashear el programa si una condicion no se cumple. 
+
+\Hypertarget{lib_8h_aa866fef1d1e97ece94063a9851afd1f9}\index{lib.h@{lib.h}!KB4@{KB4}}
+\index{KB4@{KB4}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{KB4}{KB4}}
+{\footnotesize\ttfamily \label{lib_8h_aa866fef1d1e97ece94063a9851afd1f9} 
+\#define KB4~0x1000}
+
+
+
+cuatro kilobytes 
+
+\Hypertarget{lib_8h_ac610b33ec571920dfe1c0f5d93f60516}\index{lib.h@{lib.h}!TODO@{TODO}}
+\index{TODO@{TODO}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{TODO}{TODO}}
+{\footnotesize\ttfamily \label{lib_8h_ac610b33ec571920dfe1c0f5d93f60516} 
+\#define TODO}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ log(\mbox{\hyperlink{log_8h_aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90}{ERROR}},\ \textcolor{stringliteral}{"{}\%s:\%s:\%d\ Not\ yet\ implemented\(\backslash\)n"{}},\ \_\_FILE\_\_,\ \_\_func\_\_,\ \_\_LINE\_\_);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ exit(EXIT\_FAILURE);\ \(\backslash\)}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Macro for marking parts that have not been implemented. 
+
+\Hypertarget{lib_8h_a7a12fc7ef7b16fca391e969438ebb08a}\index{lib.h@{lib.h}!try@{try}}
+\index{try@{try}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{try}{try}}
+{\footnotesize\ttfamily \label{lib_8h_a7a12fc7ef7b16fca391e969438ebb08a} 
+\#define try(\begin{DoxyParamCaption}\item[{}]{a}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if\ ((a)\ <\ 0)\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ log(\mbox{\hyperlink{log_8h_aca1fd1d8935433e6ba2e3918214e07f9a651d8a47a6976d6fe05c0e03fb4cd2d0}{FATAL}},\ \textcolor{stringliteral}{"{}\%s:\%s:\%d\ \%s\(\backslash\)n"{}},\ \_\_FILE\_\_,\ \_\_func\_\_,\ \_\_LINE\_\_,\ strerror(errno));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ exit\ (EXIT\_FAILURE);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Macro para probar si un numero es negativo. 
+
+En general, esta libreria prefiere crashear el programa que dejar que el usuario arregle un error. 
+
+\label{doc-typedef-members}
+\Hypertarget{lib_8h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}\index{lib.h@{lib.h}!Byte@{Byte}}
+\index{Byte@{Byte}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{Byte}{Byte}}
+{\footnotesize\ttfamily \label{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0} 
+typedef uint8\+\_\+t \mbox{\hyperlink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte}}}
+
+
+
+Simple \doxylink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte} type. Guaranteed to be exactly 8 bits. 
+
+\Hypertarget{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}\index{lib.h@{lib.h}!Str@{Str}}
+\index{Str@{Str}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{Str}{Str}}
+{\footnotesize\ttfamily \label{lib_8h_a081d1c707b153da230e84f2d7ca93ef3} 
+typedef const char\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}}
+
+
+
+String type. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{lib_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{lib_8h_a1ecea5510fe72bfb284cfd6d06daf271}\index{lib.h@{lib.h}!atob@{atob}}
+\index{atob@{atob}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{atob()}{atob()}}
+{\footnotesize\ttfamily \label{lib_8h_a1ecea5510fe72bfb284cfd6d06daf271} 
+\mbox{\hyperlink{structBuffer}{Buffer}} atob (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Converts a CString to a \doxylink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte} \doxylink{structBuffer}{Buffer}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & the string to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \doxylink{structBuffer}{Buffer} the string represents 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_aae55ef6e7cc40e2f55de0126252f718b}\index{lib.h@{lib.h}!atoss@{atoss}}
+\index{atoss@{atoss}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{atoss()}{atoss()}}
+{\footnotesize\ttfamily \label{lib_8h_aae55ef6e7cc40e2f55de0126252f718b} 
+\mbox{\hyperlink{structSafeStr}{Safe\+Str}} atoss (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Convert a string literal to a safe string WARNING\+: DO NOT USE THIS TO CONVERT THINGS THAT ARE NOT STRING LITERALS! 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & the string literal that you want to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a safe string representing the string literal 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_aa82a9584462ff3fe04acdb64c02517ca}\index{lib.h@{lib.h}!bufcpy@{bufcpy}}
+\index{bufcpy@{bufcpy}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{bufcpy()}{bufcpy()}}
+{\footnotesize\ttfamily \label{lib_8h_aa82a9584462ff3fe04acdb64c02517ca} 
+\mbox{\hyperlink{structBuffer}{Buffer}} bufcpy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{src}{}\end{DoxyParamCaption})}
+
+
+
+Make a copy of a \doxylink{structBuffer}{Buffer}. 
+
+Caller must free memory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the \doxylink{structBuffer}{Buffer} to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a copy of the \doxylink{structBuffer}{Buffer}
+\end{DoxyReturn}
+Make a copy of a \doxylink{structBuffer}{Buffer}.
+
+The user must free that memory. \Hypertarget{lib_8h_abea6c77ac79ee2ff6259366f1e95becc}\index{lib.h@{lib.h}!Buffer\_deinit@{Buffer\_deinit}}
+\index{Buffer\_deinit@{Buffer\_deinit}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{Buffer\_deinit()}{Buffer\_deinit()}}
+{\footnotesize\ttfamily \label{lib_8h_abea6c77ac79ee2ff6259366f1e95becc} 
+void Buffer\+\_\+deinit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{kod}{}\end{DoxyParamCaption})}
+
+
+
+Deinitializes a \doxylink{structBuffer}{Buffer}. 
+
+You could also just use free.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kod} & \doxylink{structBuffer}{Buffer} to deinitialize \\
+\hline
+\end{DoxyParams}
+\Hypertarget{lib_8h_abf1ac083dd4b229fcd24e742dbb8be80}\index{lib.h@{lib.h}!Buffer\_deserialize@{Buffer\_deserialize}}
+\index{Buffer\_deserialize@{Buffer\_deserialize}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{Buffer\_deserialize()}{Buffer\_deserialize()}}
+{\footnotesize\ttfamily \label{lib_8h_abf1ac083dd4b229fcd24e742dbb8be80} 
+\mbox{\hyperlink{structBuffer}{Buffer}} Buffer\+\_\+deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buf}{}\end{DoxyParamCaption})}
+
+
+
+Deserialize a \doxylink{structBuffer}{Buffer} from a \doxylink{structBuffer}{Buffer}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & the \doxylink{structBuffer}{Buffer} containing that \doxylink{structBuffer}{Buffer} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \doxylink{structBuffer}{Buffer} inside that \doxylink{structBuffer}{Buffer} 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_a6e3b3a962ce386c662c53fe3552443de}\index{lib.h@{lib.h}!Buffer\_read@{Buffer\_read}}
+\index{Buffer\_read@{Buffer\_read}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{Buffer\_read()}{Buffer\_read()}}
+{\footnotesize\ttfamily \label{lib_8h_a6e3b3a962ce386c662c53fe3552443de} 
+\mbox{\hyperlink{structBuffer}{Buffer}} Buffer\+\_\+read (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Reads data from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & a FILE\texorpdfstring{$\ast$}{*} to read from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \doxylink{structBuffer}{Buffer} that that file has 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_a51bed6025eb58730de18765ca2345b81}\index{lib.h@{lib.h}!Buffer\_serialize@{Buffer\_serialize}}
+\index{Buffer\_serialize@{Buffer\_serialize}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{Buffer\_serialize()}{Buffer\_serialize()}}
+{\footnotesize\ttfamily \label{lib_8h_a51bed6025eb58730de18765ca2345b81} 
+\mbox{\hyperlink{structBuffer}{Buffer}} Buffer\+\_\+serialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buf}{}\end{DoxyParamCaption})}
+
+
+
+Serialize a \doxylink{structBuffer}{Buffer} to a \doxylink{structBuffer}{Buffer}. 
+
+This basically just includes the \doxylink{structBuffer}{Buffer}\textquotesingle{}s contents along with the size of the \doxylink{structBuffer}{Buffer}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & the \doxylink{structBuffer}{Buffer} that you want to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{structBuffer}{Buffer} representing that \doxylink{structBuffer}{Buffer} 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_aa1b70d8019362ca051b93f53af180195}\index{lib.h@{lib.h}!Buffer\_write@{Buffer\_write}}
+\index{Buffer\_write@{Buffer\_write}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{Buffer\_write()}{Buffer\_write()}}
+{\footnotesize\ttfamily \label{lib_8h_aa1b70d8019362ca051b93f53af180195} 
+void Buffer\+\_\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buf}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Writes data from a \doxylink{structBuffer}{Buffer} to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & the \doxylink{structBuffer}{Buffer} to write from \\
+\hline
+{\em f} & a FILE\texorpdfstring{$\ast$}{*} to write to \\
+\hline
+\end{DoxyParams}
+\Hypertarget{lib_8h_a5a5f0715494fc965811a77209e434380}\index{lib.h@{lib.h}!concat@{concat}}
+\index{concat@{concat}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{concat()}{concat()}}
+{\footnotesize\ttfamily \label{lib_8h_a5a5f0715494fc965811a77209e434380} 
+\mbox{\hyperlink{structBuffer}{Buffer}} concat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{fst}{, }\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{snd}{}\end{DoxyParamCaption})}
+
+
+
+Concatenate two \doxylink{structBuffer}{Buffer}\textquotesingle{}s. 
+
+INFO\+: Memory is automatically free\textquotesingle{}d for buffers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fst} & the \doxylink{structBuffer}{Buffer} that comes first \\
+\hline
+{\em snd} & the \doxylink{structBuffer}{Buffer} that comes second \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{structBuffer}{Buffer} containing the data in both \doxylink{structBuffer}{Buffer}\textquotesingle{}s 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_a3d8e8e36bf4626bce1786f0cb3de93f2}\index{lib.h@{lib.h}!copy@{copy}}
+\index{copy@{copy}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily \label{lib_8h_a3d8e8e36bf4626bce1786f0cb3de93f2} 
+\mbox{\hyperlink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte}} \texorpdfstring{$\ast$}{*} copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte}} \texorpdfstring{$\ast$}{*}}]{src}{, }\item[{size\+\_\+t}]{nbytes}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte} by \doxylink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte} copy. 
+
+WARNING\+: DO NOT USE THIS TO COPY STRINGS. IT WILL NOT COPY THE NULL TERMINATOR AND YOU WILL HAVE A HEAP BUFFER OVERFLOW. Caller must free memory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & the bytes to copy from \\
+\hline
+{\em nbytes} & the number of bytes the src has \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the new bytes 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_a916415c4e091e39d1e117cefab644c40}\index{lib.h@{lib.h}!DefList@{DefList}}
+\index{DefList@{DefList}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{DefList()}{DefList()}}
+{\footnotesize\ttfamily \label{lib_8h_a916415c4e091e39d1e117cefab644c40} 
+Def\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{}{}\end{DoxyParamCaption})}
+
+
+
+This is the buffer that lazily opens the file. 
+
+\texorpdfstring{$<$}{<} the FILE\texorpdfstring{$\ast$}{*} of the file
+
+\texorpdfstring{$<$}{<} the position in the file
+
+\texorpdfstring{$<$}{<} the total size of the file
+
+\texorpdfstring{$<$}{<} the length of the current buffer
+
+\texorpdfstring{$<$}{<} the current buffer\Hypertarget{lib_8h_af652eca0072d791746db054e1c23f95e}\index{lib.h@{lib.h}!ListBuffer\_deserialize@{ListBuffer\_deserialize}}
+\index{ListBuffer\_deserialize@{ListBuffer\_deserialize}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{ListBuffer\_deserialize()}{ListBuffer\_deserialize()}}
+{\footnotesize\ttfamily \label{lib_8h_af652eca0072d791746db054e1c23f95e} 
+List\+Buffer List\+Buffer\+\_\+deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buf}{}\end{DoxyParamCaption})}
+
+
+
+Deserialize a List\+Buffer from a \doxylink{structBuffer}{Buffer}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & the \doxylink{structBuffer}{Buffer} containing that List\+Buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the List\+Buffer inside that \doxylink{structBuffer}{Buffer} 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_ad526a2d2d89313e6fa8d4358a8f1e271}\index{lib.h@{lib.h}!ListBuffer\_serialize@{ListBuffer\_serialize}}
+\index{ListBuffer\_serialize@{ListBuffer\_serialize}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{ListBuffer\_serialize()}{ListBuffer\_serialize()}}
+{\footnotesize\ttfamily \label{lib_8h_ad526a2d2d89313e6fa8d4358a8f1e271} 
+\mbox{\hyperlink{structBuffer}{Buffer}} List\+Buffer\+\_\+serialize (\begin{DoxyParamCaption}\item[{List\+Buffer}]{list}{}\end{DoxyParamCaption})}
+
+
+
+Serialize a List of \doxylink{structBuffer}{Buffer}\textquotesingle{}s to a \doxylink{structBuffer}{Buffer}. 
+
+This basically just concatenates all the \doxylink{structBuffer}{Buffer}\textquotesingle{}s.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the List\+Buffer that you want to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{structBuffer}{Buffer} representing that List\+Buffer 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_ad2d6d3319572e13e9ff038c4281b1f88}\index{lib.h@{lib.h}!min@{min}}
+\index{min@{min}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily \label{lib_8h_ad2d6d3319572e13e9ff038c4281b1f88} 
+size\+\_\+t min (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{l}{, }\item[{size\+\_\+t}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Simply returns the minimum of the two. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & the lhs \\
+\hline
+{\em r} & the rhs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the smaller of l and r 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_a20ae1ac2b6a0366de82fb8a74aaff232}\index{lib.h@{lib.h}!mkdir\_p@{mkdir\_p}}
+\index{mkdir\_p@{mkdir\_p}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{mkdir\_p()}{mkdir\_p()}}
+{\footnotesize\ttfamily \label{lib_8h_a20ae1ac2b6a0366de82fb8a74aaff232} 
+bool mkdir\+\_\+p (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSafeStr}{Safe\+Str}}}]{fpath}{, }\item[{mode\+\_\+t}]{mode}{}\end{DoxyParamCaption})}
+
+
+
+Recursively create directories. 
+
+The following code\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{lib_8c_a20ae1ac2b6a0366de82fb8a74aaff232}{mkdir\_p}}(fpath,\ mode);}
+
+\end{DoxyCode}
+ is equivalent to the following Shell code\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ -\/p\ -\/m\ mode\ fpath}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em fpath} & the filepath where you want to create a directory \\
+\hline
+{\em mode} & the mode in which you want to create the directory \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean value telling you whether the directory was created correctly or not. 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_a098c96ef08b2936a08e1579441a2d879}\index{lib.h@{lib.h}!next\_chunk@{next\_chunk}}
+\index{next\_chunk@{next\_chunk}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{next\_chunk()}{next\_chunk()}}
+{\footnotesize\ttfamily \label{lib_8h_a098c96ef08b2936a08e1579441a2d879} 
+\mbox{\hyperlink{lib_8h_a915441aea5cc675775651f5918cb1ed1}{Lazy\+Buffer}} next\+\_\+chunk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lib_8h_a915441aea5cc675775651f5918cb1ed1}{Lazy\+Buffer}}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Reads the next chunk of the file, if it can. 
+
+In the case where the entire file was read, the Lazy\+Buffer\+::len will be 0. I\textquotesingle{}m not sure in what case you wouldn\textquotesingle{}t want to do it this way, but you probably always want to use this like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{b\ =\ \mbox{\hyperlink{lib_8c_a098c96ef08b2936a08e1579441a2d879}{next\_chunk}}(b);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & the Lazy\+Buffer that you want to get the next chunk for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Lazy\+Buffer with the next chunk in its Lazy\+Buffer\+::buf 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_a5f359d7cd188ef26212022cef9702ca9}\index{lib.h@{lib.h}!open@{open}}
+\index{open@{open}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily \label{lib_8h_a5f359d7cd188ef26212022cef9702ca9} 
+\mbox{\hyperlink{lib_8h_a915441aea5cc675775651f5918cb1ed1}{Lazy\+Buffer}} open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}}]{fpath}{}\end{DoxyParamCaption})}
+
+
+
+Open a Lazy\+Buffer. 
+
+INFO\+: This does not fill the Lazy\+Buffer with anything. Consider it similar to just executing\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{fopen(fpath);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em fpath} & the file path to the file that you want to open \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Lazy\+Buffer with the 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_a92d26c61ccfaa4adac48843cb08ba47d}\index{lib.h@{lib.h}!safe\_strlen@{safe\_strlen}}
+\index{safe\_strlen@{safe\_strlen}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{safe\_strlen()}{safe\_strlen()}}
+{\footnotesize\ttfamily \label{lib_8h_a92d26c61ccfaa4adac48843cb08ba47d} 
+size\+\_\+t safe\+\_\+strlen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}}]{str}{, }\item[{size\+\_\+t}]{max\+\_\+len}{}\end{DoxyParamCaption})}
+
+
+
+Does an strlen using a max size. 
+
+Avoids buffer overflows.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & the string to look at \\
+\hline
+{\em max\+\_\+len} & the maximum length that the string can have \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size of the string 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_ab264e0379921fedd7bd2e258334cfcbc}\index{lib.h@{lib.h}!SafeStr\_deserialize@{SafeStr\_deserialize}}
+\index{SafeStr\_deserialize@{SafeStr\_deserialize}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{SafeStr\_deserialize()}{SafeStr\_deserialize()}}
+{\footnotesize\ttfamily \label{lib_8h_ab264e0379921fedd7bd2e258334cfcbc} 
+\mbox{\hyperlink{structSafeStr}{Safe\+Str}} Safe\+Str\+\_\+deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buf}{}\end{DoxyParamCaption})}
+
+
+
+Deserializes a string from a \doxylink{structBuffer}{Buffer}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & \doxylink{structBuffer}{Buffer} to deserialize from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a safe string from the \doxylink{structBuffer}{Buffer} 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_aa8347078f332063b2500e7c887ce4270}\index{lib.h@{lib.h}!SafeStr\_serialize@{SafeStr\_serialize}}
+\index{SafeStr\_serialize@{SafeStr\_serialize}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{SafeStr\_serialize()}{SafeStr\_serialize()}}
+{\footnotesize\ttfamily \label{lib_8h_aa8347078f332063b2500e7c887ce4270} 
+\mbox{\hyperlink{structBuffer}{Buffer}} Safe\+Str\+\_\+serialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSafeStr}{Safe\+Str}}}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Serializes a string. 
+
+INFO\+: ONLY SERIALIZE STRINGS WITH THIS.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & a safe string to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{structBuffer}{Buffer} containing that string 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_a549d08a5d8773c64f21bc7619fced808}\index{lib.h@{lib.h}!size\_t\_deserialize@{size\_t\_deserialize}}
+\index{size\_t\_deserialize@{size\_t\_deserialize}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{size\_t\_deserialize()}{size\_t\_deserialize()}}
+{\footnotesize\ttfamily \label{lib_8h_a549d08a5d8773c64f21bc7619fced808} 
+size\+\_\+t size\+\_\+t\+\_\+deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buf}{}\end{DoxyParamCaption})}
+
+
+
+Deserializes a size\+\_\+t length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & the \doxylink{structBuffer}{Buffer} to deserialize from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_ac4594c5f5a4579750bf0c6c36eac71f4}\index{lib.h@{lib.h}!size\_t\_serialize@{size\_t\_serialize}}
+\index{size\_t\_serialize@{size\_t\_serialize}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{size\_t\_serialize()}{size\_t\_serialize()}}
+{\footnotesize\ttfamily \label{lib_8h_ac4594c5f5a4579750bf0c6c36eac71f4} 
+\mbox{\hyperlink{structBuffer}{Buffer}} size\+\_\+t\+\_\+serialize (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Serializes a size\+\_\+t length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the size to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{structBuffer}{Buffer} containing the size 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_a4e678b2276c57362fdc4de4b9308193d}\index{lib.h@{lib.h}!Str\_eq@{Str\_eq}}
+\index{Str\_eq@{Str\_eq}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{Str\_eq()}{Str\_eq()}}
+{\footnotesize\ttfamily \label{lib_8h_a4e678b2276c57362fdc4de4b9308193d} 
+bool Str\+\_\+eq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}}]{lhs}{, }\item[{\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Compares two strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & left-\/hand side string \\
+\hline
+{\em rhs} & right-\/hand side string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the strings are equal or not 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_ac4734c81c889a8abf1833ebae219fc21}\index{lib.h@{lib.h}!to\_buffer@{to\_buffer}}
+\index{to\_buffer@{to\_buffer}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{to\_buffer()}{to\_buffer()}}
+{\footnotesize\ttfamily \label{lib_8h_ac4734c81c889a8abf1833ebae219fc21} 
+\mbox{\hyperlink{structBuffer}{Buffer}} to\+\_\+buffer (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{thing}{, }\item[{size\+\_\+t}]{nbytes}{}\end{DoxyParamCaption})}
+
+
+
+Convert a thing to a buffer. 
+
+This can be used for types whose size is known at compile-\/time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thing} & a pointer to the thing that you want to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{structBuffer}{Buffer} containing that thing 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_a083e5dd7aba03cbceec5300b6c65539b}\index{lib.h@{lib.h}!uint16\_t\_deserialize@{uint16\_t\_deserialize}}
+\index{uint16\_t\_deserialize@{uint16\_t\_deserialize}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{uint16\_t\_deserialize()}{uint16\_t\_deserialize()}}
+{\footnotesize\ttfamily \label{lib_8h_a083e5dd7aba03cbceec5300b6c65539b} 
+uint16\+\_\+t uint16\+\_\+t\+\_\+deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buf}{}\end{DoxyParamCaption})}
+
+
+
+Deserialize a uint16\+\_\+t from a \doxylink{structBuffer}{Buffer}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & the \doxylink{structBuffer}{Buffer} containing that uint16\+\_\+t \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the uint16\+\_\+t inside that \doxylink{structBuffer}{Buffer} 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_abc960393a951fdd9cf81fd5d3023e84f}\index{lib.h@{lib.h}!uint16\_t\_serialize@{uint16\_t\_serialize}}
+\index{uint16\_t\_serialize@{uint16\_t\_serialize}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{uint16\_t\_serialize()}{uint16\_t\_serialize()}}
+{\footnotesize\ttfamily \label{lib_8h_abc960393a951fdd9cf81fd5d3023e84f} 
+\mbox{\hyperlink{structBuffer}{Buffer}} uint16\+\_\+t\+\_\+serialize (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Serialize a uint16\+\_\+t to a \doxylink{structBuffer}{Buffer}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & the uint16\+\_\+t that you want to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{structBuffer}{Buffer} representing that uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_add987af6ff87802e646925d3daa64f93}\index{lib.h@{lib.h}!uint32\_t\_deserialize@{uint32\_t\_deserialize}}
+\index{uint32\_t\_deserialize@{uint32\_t\_deserialize}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{uint32\_t\_deserialize()}{uint32\_t\_deserialize()}}
+{\footnotesize\ttfamily \label{lib_8h_add987af6ff87802e646925d3daa64f93} 
+uint32\+\_\+t uint32\+\_\+t\+\_\+deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buf}{}\end{DoxyParamCaption})}
+
+
+
+Deserialize a uint32\+\_\+t from a \doxylink{structBuffer}{Buffer}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & the \doxylink{structBuffer}{Buffer} containing that uint32\+\_\+t \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the uint32\+\_\+t inside that \doxylink{structBuffer}{Buffer} 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_a19ad6eb62f77df23fe23457589df10d1}\index{lib.h@{lib.h}!uint32\_t\_serialize@{uint32\_t\_serialize}}
+\index{uint32\_t\_serialize@{uint32\_t\_serialize}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{uint32\_t\_serialize()}{uint32\_t\_serialize()}}
+{\footnotesize\ttfamily \label{lib_8h_a19ad6eb62f77df23fe23457589df10d1} 
+\mbox{\hyperlink{structBuffer}{Buffer}} uint32\+\_\+t\+\_\+serialize (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Serialize a uint32\+\_\+t to a \doxylink{structBuffer}{Buffer}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & the uint32\+\_\+t that you want to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{structBuffer}{Buffer} representing that uint32\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_ac2e833c12254d0640bda7307d4b31e5c}\index{lib.h@{lib.h}!uint8\_t\_deserialize@{uint8\_t\_deserialize}}
+\index{uint8\_t\_deserialize@{uint8\_t\_deserialize}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{uint8\_t\_deserialize()}{uint8\_t\_deserialize()}}
+{\footnotesize\ttfamily \label{lib_8h_ac2e833c12254d0640bda7307d4b31e5c} 
+uint8\+\_\+t uint8\+\_\+t\+\_\+deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buf}{}\end{DoxyParamCaption})}
+
+
+
+Deserialize a uint8\+\_\+t from a \doxylink{structBuffer}{Buffer}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & the \doxylink{structBuffer}{Buffer} containing that uint8\+\_\+t \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the uint8\+\_\+t inside that \doxylink{structBuffer}{Buffer} 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_af166da8a585c08e40990cf9ac7f24302}\index{lib.h@{lib.h}!uint8\_t\_serialize@{uint8\_t\_serialize}}
+\index{uint8\_t\_serialize@{uint8\_t\_serialize}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{uint8\_t\_serialize()}{uint8\_t\_serialize()}}
+{\footnotesize\ttfamily \label{lib_8h_af166da8a585c08e40990cf9ac7f24302} 
+\mbox{\hyperlink{structBuffer}{Buffer}} uint8\+\_\+t\+\_\+serialize (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Serialize a uint8\+\_\+t to a \doxylink{structBuffer}{Buffer}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & the uint8\+\_\+t that you want to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{structBuffer}{Buffer} representing that uint8\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{lib_8h_a3cf2e8b3b546d5c54208d6f27cbd2635}\index{lib.h@{lib.h}!validate\_str@{validate\_str}}
+\index{validate\_str@{validate\_str}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{validate\_str()}{validate\_str()}}
+{\footnotesize\ttfamily \label{lib_8h_a3cf2e8b3b546d5c54208d6f27cbd2635} 
+\mbox{\hyperlink{structBuffer}{Buffer}} validate\+\_\+str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{str}{, }\item[{size\+\_\+t}]{max\+\_\+len}{}\end{DoxyParamCaption})}
+
+
+
+Validates that a string received through a Socket is correct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & a \doxylink{structBuffer}{Buffer} with the string \\
+\hline
+{\em max\+\_\+len} & the maximum size of the string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{structBuffer}{Buffer} containing the string
+\end{DoxyReturn}
+Validates that a string received through a Socket is correct. 
+
+\label{doc-var-members}
+\Hypertarget{lib_8h_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{lib_8h_a915441aea5cc675775651f5918cb1ed1}\index{lib.h@{lib.h}!LazyBuffer@{LazyBuffer}}
+\index{LazyBuffer@{LazyBuffer}!lib.h@{lib.h}}
+\doxysubsubsection{\texorpdfstring{LazyBuffer}{LazyBuffer}}
+{\footnotesize\ttfamily \label{lib_8h_a915441aea5cc675775651f5918cb1ed1} 
+Lazy\+Buffer}
+

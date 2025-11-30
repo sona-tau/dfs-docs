@@ -1,0 +1,158 @@
+\doxysection{lib.\+h}
+\hypertarget{lib_8h_source}{}\label{lib_8h_source}\index{src/lib/lib.h@{src/lib/lib.h}}
+\mbox{\hyperlink{lib_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ lib/lib.h}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ General\ library\ stuff.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ LIB\_H\_}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ LIB\_H\_}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/\ Includes\ -\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <errno.h>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{list_8h}{list.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{log_8h}{log.h}}"{}}\ \textcolor{comment}{//\ This\ may\ appear\ unused\ but\ it\ is\ used\ in\ the\ macros}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/\ Macros\ -\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ try(a)\ do\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ ((a)\ <\ 0)\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ log(FATAL,\ "{}\%s:\%s:\%d\ \%s\(\backslash\)n"{},\ \_\_FILE\_\_,\ \_\_func\_\_,\ \_\_LINE\_\_,\ strerror(errno));\ \(\backslash\)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ exit\ (EXIT\_FAILURE);\ \(\backslash\)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\ \ \ \ \}\ while(0)}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ exists(a)\ do\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ ((a)\ ==\ NULL)\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ log(FATAL,\ "{}\%s:\%s:\%d\ Null\ pointer\ encountered,\ \%s\(\backslash\)n"{},\ \_\_FILE\_\_,\ \_\_func\_\_,\ \_\_LINE\_\_,\ strerror(errno));\ \(\backslash\)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ exit\ (EXIT\_FAILURE);\ \(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\ \ \ \ \}\ while(0)}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ TODO\ do\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \ \ log(ERROR,\ "{}\%s:\%s:\%d\ Not\ yet\ implemented\(\backslash\)n"{},\ \_\_FILE\_\_,\ \_\_func\_\_,\ \_\_LINE\_\_);\ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ \ \ exit(EXIT\_FAILURE);\ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\}\ while(0)}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ expect(cond,\ ...)\ do\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ \ \ if\ (!(cond))\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ fprintf(stderr,\ \_\_VA\_ARGS\_\_);\ \(\backslash\)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ exit(EXIT\_FAILURE);\ \(\backslash\)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\}\ while\ (0)}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ KB4\ 0x1000}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ CHUNK\_SIZE\ 0x400}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/\ Types\ -\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{typedef}\ uint8\_t\ \mbox{\hyperlink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}\ \mbox{\hyperlink{structSafeStr_aa387d9644bb8c7f3cd2abaec610cb204}{str}};\ \ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structSafeStr_ae997a00d051b0b38c2ac50b53389a5ba}{len}};\ \ }
+\DoxyCodeLine{00079\ \}\ \mbox{\hyperlink{structSafeStr}{SafeStr}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00089\ \mbox{\hyperlink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte}}*\ \mbox{\hyperlink{lib_8h_a3d8e8e36bf4626bce1786f0cb3de93f2}{copy}}(\mbox{\hyperlink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte}}*\ src,\ \textcolor{keywordtype}{size\_t}\ nbytes);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structBuffer_a0e37d565528193b47c466eb248f5a714}{len}};\ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte}}*\ \mbox{\hyperlink{structBuffer_a4ff8cd56bcbabbe3f65391f83d2c871a}{buf}};\ \ \ }
+\DoxyCodeLine{00095\ \}\ \mbox{\hyperlink{structBuffer}{Buffer}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \mbox{\hyperlink{list_8h_a605ccd00e83e8a83e9c481ae89706597}{DefList}}(\mbox{\hyperlink{structBuffer}{Buffer}})}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00101\ \ \ \ \ FILE*\ fptr;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ position;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ len;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte}}\ buf[\mbox{\hyperlink{lib_8h_aea3cfda4f3a9f978ec759f206cf186fe}{CHUNK\_SIZE}}];\ }
+\DoxyCodeLine{00106\ \}\ \mbox{\hyperlink{lib_8h_a915441aea5cc675775651f5918cb1ed1}{LazyBuffer}};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/\ Functions\ -\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00123\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{lib_8h_a20ae1ac2b6a0366de82fb8a74aaff232}{mkdir\_p}}(\mbox{\hyperlink{structSafeStr}{SafeStr}}\ fpath,\ mode\_t\ mode);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00135\ \mbox{\hyperlink{lib_8h_a915441aea5cc675775651f5918cb1ed1}{LazyBuffer}}\ \mbox{\hyperlink{lib_8h_a5f359d7cd188ef26212022cef9702ca9}{open}}(\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}\ fpath);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00148\ \mbox{\hyperlink{lib_8h_a915441aea5cc675775651f5918cb1ed1}{LazyBuffer}}\ \mbox{\hyperlink{lib_8h_a098c96ef08b2936a08e1579441a2d879}{next\_chunk}}(\mbox{\hyperlink{lib_8h_a915441aea5cc675775651f5918cb1ed1}{LazyBuffer}}\ b);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00156\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{lib_8h_a51bed6025eb58730de18765ca2345b81}{Buffer\_serialize}}(\mbox{\hyperlink{structBuffer}{Buffer}}\ buf);}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00162\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{lib_8h_abf1ac083dd4b229fcd24e742dbb8be80}{Buffer\_deserialize}}(\mbox{\hyperlink{structBuffer}{Buffer}}\ buf);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00169\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{lib_8h_ad526a2d2d89313e6fa8d4358a8f1e271}{ListBuffer\_serialize}}(ListBuffer\ \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}});}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00175\ ListBuffer\ \mbox{\hyperlink{lib_8h_af652eca0072d791746db054e1c23f95e}{ListBuffer\_deserialize}}(\mbox{\hyperlink{structBuffer}{Buffer}}\ buf);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00182\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{lib_8h_ac4734c81c889a8abf1833ebae219fc21}{to\_buffer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ thing,\ \textcolor{keywordtype}{size\_t}\ nbytes);}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00188\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{lib_8h_af166da8a585c08e40990cf9ac7f24302}{uint8\_t\_serialize}}(uint8\_t\ n);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00194\ uint8\_t\ \mbox{\hyperlink{lib_8h_ac2e833c12254d0640bda7307d4b31e5c}{uint8\_t\_deserialize}}(\mbox{\hyperlink{structBuffer}{Buffer}}\ buf);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00200\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{lib_8h_abc960393a951fdd9cf81fd5d3023e84f}{uint16\_t\_serialize}}(uint16\_t\ n);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00206\ uint16\_t\ \mbox{\hyperlink{lib_8h_a083e5dd7aba03cbceec5300b6c65539b}{uint16\_t\_deserialize}}(\mbox{\hyperlink{structBuffer}{Buffer}}\ buf);}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00212\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{lib_8h_a19ad6eb62f77df23fe23457589df10d1}{uint32\_t\_serialize}}(uint32\_t\ n);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00218\ uint32\_t\ \mbox{\hyperlink{lib_8h_add987af6ff87802e646925d3daa64f93}{uint32\_t\_deserialize}}(\mbox{\hyperlink{structBuffer}{Buffer}}\ buf);}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00224\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{lib_8h_a1ecea5510fe72bfb284cfd6d06daf271}{atob}}(\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}\ str);}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00231\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{lib_8h_a3cf2e8b3b546d5c54208d6f27cbd2635}{validate\_str}}(\mbox{\hyperlink{structBuffer}{Buffer}}\ str,\ \textcolor{keywordtype}{size\_t}\ max\_len);}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00238\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{lib_8h_aa82a9584462ff3fe04acdb64c02517ca}{bufcpy}}(\mbox{\hyperlink{structBuffer}{Buffer}}\ in);}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00246\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{lib_8h_a92d26c61ccfaa4adac48843cb08ba47d}{safe\_strlen}}(\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}\ str,\ \textcolor{keywordtype}{size\_t}\ max\_len);}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00252\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lib_8h_abea6c77ac79ee2ff6259366f1e95becc}{Buffer\_deinit}}(\mbox{\hyperlink{structBuffer}{Buffer}}\ kod);}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00258\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lib_8h_aa1b70d8019362ca051b93f53af180195}{Buffer\_write}}(\mbox{\hyperlink{structBuffer}{Buffer}}\ buf,\ FILE*\ f);}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00264\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{lib_8h_a6e3b3a962ce386c662c53fe3552443de}{Buffer\_read}}(FILE*\ f);}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00271\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{lib_8h_aa8347078f332063b2500e7c887ce4270}{SafeStr\_serialize}}(\mbox{\hyperlink{structSafeStr}{SafeStr}}\ str);}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00277\ \mbox{\hyperlink{structSafeStr}{SafeStr}}\ \mbox{\hyperlink{lib_8h_ab264e0379921fedd7bd2e258334cfcbc}{SafeStr\_deserialize}}(\mbox{\hyperlink{structBuffer}{Buffer}}\ buf);}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00283\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{lib_8h_ac4594c5f5a4579750bf0c6c36eac71f4}{size\_t\_serialize}}(\textcolor{keywordtype}{size\_t}\ a);}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00289\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{lib_8h_a549d08a5d8773c64f21bc7619fced808}{size\_t\_deserialize}}(\mbox{\hyperlink{structBuffer}{Buffer}}\ buf);}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00297\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{lib_8h_a5a5f0715494fc965811a77209e434380}{concat}}(\mbox{\hyperlink{structBuffer}{Buffer}}\ fst,\ \mbox{\hyperlink{structBuffer}{Buffer}}\ snd);}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00304\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{lib_8h_a4e678b2276c57362fdc4de4b9308193d}{Str\_eq}}(\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}\ lhs,\ \mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}\ rhs);}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00311\ \mbox{\hyperlink{structSafeStr}{SafeStr}}\ \mbox{\hyperlink{lib_8h_aae55ef6e7cc40e2f55de0126252f718b}{atoss}}(\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}\ str);}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00318\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{lib_8h_ad2d6d3319572e13e9ff038c4281b1f88}{min}}(\textcolor{keywordtype}{size\_t}\ l,\ \textcolor{keywordtype}{size\_t}\ r);}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00321\ \}}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LIB\_H\_}}
+
+\end{DoxyCode}

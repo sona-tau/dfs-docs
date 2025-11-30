@@ -1,0 +1,73 @@
+\doxysection{uuid.\+h}
+\hypertarget{uuid_8h_source}{}\label{uuid_8h_source}\index{src/lib/uuid.h@{src/lib/uuid.h}}
+\mbox{\hyperlink{uuid_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ lib/uuid.h}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Has\ UUID\ utilities.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ UUID\_H\_}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ UUID\_H\_}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/\ Includes\ -\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lib_8h}{lib.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{list_8h}{list.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/\ Types\ -\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structUUID_a1edb243756108f3349e1e983fad1656a}{id1}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structUUID_a8703cb1e28f1a614e0c5e05685ba1671}{id2}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structUUID_ab95623f630cf4e294aa1d058469fb4e8}{id3}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structUUID_afd9b0734d078838b64142745d920dbc1}{id4}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structUUID_a6f42b7626acd78205841affbf7c751ee}{id5}}\ :\ 48;\ \ \ }
+\DoxyCodeLine{00030\ \}\ \mbox{\hyperlink{structUUID}{UUID}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structUUID__Str_a765cbcf869fcf8ef2d25b6c1df8ebae9}{uuid}}[39];\ \ }
+\DoxyCodeLine{00035\ \}\ \mbox{\hyperlink{structUUID__Str}{UUID\_Str}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structHexByte_aabf1325c48228558c76c0f57a9aad101}{l}};\ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structHexByte_a3cc33023cb93d2fffc16d45f70506b14}{r}};\ \ \ \ }
+\DoxyCodeLine{00042\ \}\ \mbox{\hyperlink{structHexByte}{HexByte}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/\ Functions\ -\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \mbox{\hyperlink{list_8h_a605ccd00e83e8a83e9c481ae89706597}{DefList}}(\mbox{\hyperlink{structHexByte}{HexByte}})}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00058\ \mbox{\hyperlink{structUUID__Str}{UUID\_Str}}\ utoa(\mbox{\hyperlink{structUUID}{UUID}}\ uuid);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \mbox{\hyperlink{structBuffer}{Buffer}}\ \mbox{\hyperlink{uuid_8h_a32d8b991261a68ba9723b80053b91cae}{UUID\_serialize}}(\mbox{\hyperlink{structUUID}{UUID}}\ uuid);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \mbox{\hyperlink{structUUID}{UUID}}\ \mbox{\hyperlink{uuid_8h_aa760f003a88b2fdec0ce19fc77069ec4}{UUID\_deserialize}}(\mbox{\hyperlink{structBuffer}{Buffer}}\ buf);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ uint64\_t\ \mbox{\hyperlink{uuid_8h_af547b50b18c5f8480cb75344e37d0f42}{from\_hex}}(\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}\ str,\ \textcolor{keywordtype}{size\_t}\ max\_len);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \mbox{\hyperlink{structUUID}{UUID}}\ \mbox{\hyperlink{uuid_8h_a447550bedfcb53256a929a410a34cc1b}{new\_uuid}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00090\ \mbox{\hyperlink{structHexByte}{HexByte}}\ \mbox{\hyperlink{uuid_8h_a5cc3f2c8cc1c07f50bcb0b6f4dd41827}{to\_hex1}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00097\ ListHexByte\ \mbox{\hyperlink{uuid_8h_ac9419e502e46154eefa7d2bd926e8882}{to\_hex}}(uint64\_t\ n);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{uuid_8h_a175030c00943bdb6b65b2b3820f88529}{ListHexByte\_print}}(ListHexByte\ \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}},\ \textcolor{keywordtype}{char}\ end);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00110\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{uuid_8h_aa91b2986b25b160d92bb70568cc970d1}{UUID\_eq}}(\mbox{\hyperlink{structUUID}{UUID}}\ lhs,\ \mbox{\hyperlink{structUUID}{UUID}}\ rhs);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00113\ \}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UUID\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,69 @@
+\doxysection{src/data-\/node.c File Reference}
+\hypertarget{data-node_8c}{}\label{data-node_8c}\index{src/data-\/node.c@{src/data-\/node.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include "{}lib/lib.\+h"{}}\newline
+{\ttfamily \#include "{}lib/enchufe.\+h"{}}\newline
+{\ttfamily \#include "{}lib/uuid.\+h"{}}\newline
+{\ttfamily \#include "{}lib/log.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{data-node_8c_a8b5839f71a3b6e7d64b2d5e9967e3dd1}{BUF\+\_\+\+LEN}}~0x1000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{data-node_8c_ac3743a1a1c907f12620efde8a5d1ebe6}{lire}} (\mbox{\hyperlink{structEnchufe}{Enchufe}} cliente, \mbox{\hyperlink{structUUID}{UUID}} cid, \mbox{\hyperlink{structSafeStr}{Safe\+Str}} data\+\_\+dir\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Handle when a client wants to read a block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{data-node_8c_adce031d6b24aad9ad4c27320c866fdef}{ecriver}} (\mbox{\hyperlink{structEnchufe}{Enchufe}} cliente, size\+\_\+t nbytes, \mbox{\hyperlink{structSafeStr}{Safe\+Str}} data\+\_\+dir\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Handle when a cllient wants to write a block. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{data-node_8c_a37d5adef8e4591658221dd270f13026a}{main}} (int argc, \mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}} \texorpdfstring{$\ast$}{*}argv)
+\begin{DoxyCompactList}\small\item\em This is the data node implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{data-node_8c_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{data-node_8c_a8b5839f71a3b6e7d64b2d5e9967e3dd1}\index{data-\/node.c@{data-\/node.c}!BUF\_LEN@{BUF\_LEN}}
+\index{BUF\_LEN@{BUF\_LEN}!data-\/node.c@{data-\/node.c}}
+\doxysubsubsection{\texorpdfstring{BUF\_LEN}{BUF\_LEN}}
+{\footnotesize\ttfamily \label{data-node_8c_a8b5839f71a3b6e7d64b2d5e9967e3dd1} 
+\#define BUF\+\_\+\+LEN~0x1000}
+
+
+
+\label{doc-func-members}
+\Hypertarget{data-node_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{data-node_8c_adce031d6b24aad9ad4c27320c866fdef}\index{data-\/node.c@{data-\/node.c}!ecriver@{ecriver}}
+\index{ecriver@{ecriver}!data-\/node.c@{data-\/node.c}}
+\doxysubsubsection{\texorpdfstring{ecriver()}{ecriver()}}
+{\footnotesize\ttfamily \label{data-node_8c_adce031d6b24aad9ad4c27320c866fdef} 
+void ecriver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnchufe}{Enchufe}}}]{cliente}{, }\item[{size\+\_\+t}]{nbytes}{, }\item[{\mbox{\hyperlink{structSafeStr}{Safe\+Str}}}]{data\+\_\+dir\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Handle when a cllient wants to write a block. 
+
+\Hypertarget{data-node_8c_ac3743a1a1c907f12620efde8a5d1ebe6}\index{data-\/node.c@{data-\/node.c}!lire@{lire}}
+\index{lire@{lire}!data-\/node.c@{data-\/node.c}}
+\doxysubsubsection{\texorpdfstring{lire()}{lire()}}
+{\footnotesize\ttfamily \label{data-node_8c_ac3743a1a1c907f12620efde8a5d1ebe6} 
+void lire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnchufe}{Enchufe}}}]{cliente}{, }\item[{\mbox{\hyperlink{structUUID}{UUID}}}]{cid}{, }\item[{\mbox{\hyperlink{structSafeStr}{Safe\+Str}}}]{data\+\_\+dir\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Handle when a client wants to read a block. 
+
+\Hypertarget{data-node_8c_a37d5adef8e4591658221dd270f13026a}\index{data-\/node.c@{data-\/node.c}!main@{main}}
+\index{main@{main}!data-\/node.c@{data-\/node.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{data-node_8c_a37d5adef8e4591658221dd270f13026a} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}} \texorpdfstring{$\ast$}{*}}]{argv}{}\end{DoxyParamCaption})}
+
+
+
+This is the data node implementation. 
+

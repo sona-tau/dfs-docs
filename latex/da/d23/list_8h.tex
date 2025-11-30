@@ -1,0 +1,264 @@
+\doxysection{src/lib/list.h File Reference}
+\hypertarget{list_8h}{}\label{list_8h}\index{src/lib/list.h@{src/lib/list.h}}
+{\ttfamily \#include "{}lib.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structNodeOpaque}{Node\+Opaque}}
+\begin{DoxyCompactList}\small\item\em This is the data at each node on a List. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{list_8h_a605ccd00e83e8a83e9c481ae89706597}{Def\+List}}(type)
+\item 
+\#define \mbox{\hyperlink{list_8h_af0aa70681071e9652f5782ea50c168f4}{Impl\+List}}(type)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_a0c872b2b5377622a0056fff4dde83d40}{Opaque}}
+\begin{DoxyCompactList}\small\item\em An opaque type. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structNodeOpaque}{Node\+Opaque}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}}
+\begin{DoxyCompactList}\small\item\em This is the actual type of the List. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{list_8h_aee614062180456aa1575288c1d49d5c9}{List\+Opaque\+\_\+deinit}} (\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}} \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}})
+\begin{DoxyCompactList}\small\item\em Deinitialize the List. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{list_8h_a0c872b2b5377622a0056fff4dde83d40}{Opaque}} \mbox{\hyperlink{list_8h_ac62fb25336f13051d8228b1b20869bc0}{List\+Opaque\+\_\+car}} (struct \mbox{\hyperlink{structNodeOpaque}{Node\+Opaque}} node)
+\begin{DoxyCompactList}\small\item\em Returns the element at the head of the List. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structNodeOpaque}{Node\+Opaque}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_acf88f78d257227d21d7196037922380a}{List\+Opaque\+\_\+cdr}} (struct \mbox{\hyperlink{structNodeOpaque}{Node\+Opaque}} node)
+\begin{DoxyCompactList}\small\item\em Returns the rest of the List, ignoring the first element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}} \mbox{\hyperlink{list_8h_a21ce50c0ff4101692631f1892f886188}{List\+Opaque\+\_\+cons}} (\mbox{\hyperlink{list_8h_a0c872b2b5377622a0056fff4dde83d40}{Opaque}} fst, \mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}} \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}})
+\begin{DoxyCompactList}\small\item\em Prepend an element to the List. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}} \mbox{\hyperlink{list_8h_a41aa415f1fa90e41fee81ec7e4f16359}{List\+Opaque\+\_\+rev}} (\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}} \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}}, \mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}} acc)
+\begin{DoxyCompactList}\small\item\em Helper function for List\+Opaque\+\_\+reverse. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}} \mbox{\hyperlink{list_8h_ad4ed0e3b3f346f7304bf7af96f391ec7}{List\+Opaque\+\_\+reverse}} (\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}} \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}})
+\begin{DoxyCompactList}\small\item\em Reverses a List. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{list_8h_a1da6947b16c73dbad26bd460a0e13162}{List\+Opaque\+\_\+length}} (\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}} \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}})
+\begin{DoxyCompactList}\small\item\em Returns the length of the List. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{list_8h_a0c872b2b5377622a0056fff4dde83d40}{Opaque}} \mbox{\hyperlink{list_8h_a694b5a1d3f8f05d72bb6717d15167845}{List\+Opaque\+\_\+at}} (\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}} \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}}, size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em The indexing function for a List. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{list_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{list_8h_a605ccd00e83e8a83e9c481ae89706597}\index{list.h@{list.h}!DefList@{DefList}}
+\index{DefList@{DefList}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{DefList}{DefList}}
+{\footnotesize\ttfamily \label{list_8h_a605ccd00e83e8a83e9c481ae89706597} 
+\#define Def\+List(\begin{DoxyParamCaption}\item[{}]{type}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }Node\#\#type\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ type\ head;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{struct\ }Node\#\#type*\ rest;\ \(\backslash\)}
+\DoxyCodeLine{\};\ \(\backslash\)}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }Node\#\#type*\ List\#\#type;\ \(\backslash\)}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ List\#\#type\#\#\_deinit(List\#\#type\ \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}});\ \(\backslash\)}
+\DoxyCodeLine{type\ List\#\#type\#\#\_car(\textcolor{keyword}{struct}\ Node\#\#type\ node);\ \(\backslash\)}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }Node\#\#type*\ List\#\#type\#\#\_cdr(\textcolor{keyword}{struct}\ Node\#\#type\ node);\ \(\backslash\)}
+\DoxyCodeLine{List\#\#type\ List\#\#type\#\#\_cons(type\ a,\ List\#\#type\ \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}});\ \(\backslash\)}
+\DoxyCodeLine{List\#\#type\ List\#\#type\#\#\_rev(List\#\#type\ \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}},\ List\#\#type\ a);\ \(\backslash\)}
+\DoxyCodeLine{List\#\#type\ List\#\#type\#\#\_reverse(List\#\#type\ \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}});\ \(\backslash\)}
+\DoxyCodeLine{\textcolor{keywordtype}{size\_t}\ List\#\#type\#\#\_length(List\#\#type\ \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}});\ \(\backslash\)}
+\DoxyCodeLine{type\ List\#\#type\#\#\_at(List\#\#type\ \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}},\ \textcolor{keywordtype}{size\_t}\ index);\ \(\backslash\)}
+\DoxyCodeLine{List\#\#type\ List\#\#type\#\#\_drop(List\#\#type\ \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}},\ \textcolor{keywordtype}{size\_t}\ n);\ \(\backslash\)}
+\DoxyCodeLine{List\#\#type\ List\#\#type\#\#\_drop(List\#\#type\ \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}},\ \textcolor{keywordtype}{size\_t}\ n);}
+
+\end{DoxyCode}
+\Hypertarget{list_8h_af0aa70681071e9652f5782ea50c168f4}\index{list.h@{list.h}!ImplList@{ImplList}}
+\index{ImplList@{ImplList}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{ImplList}{ImplList}}
+{\footnotesize\ttfamily \label{list_8h_af0aa70681071e9652f5782ea50c168f4} 
+\#define Impl\+List(\begin{DoxyParamCaption}\item[{}]{type}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-typedef-members}
+\Hypertarget{list_8h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{list_8h_a0204e4415d9108263d3d986289c659fb}\index{list.h@{list.h}!ListOpaque@{ListOpaque}}
+\index{ListOpaque@{ListOpaque}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{ListOpaque}{ListOpaque}}
+{\footnotesize\ttfamily \label{list_8h_a0204e4415d9108263d3d986289c659fb} 
+typedef struct \mbox{\hyperlink{structNodeOpaque}{Node\+Opaque}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}}}
+
+
+
+This is the actual type of the List. 
+
+\Hypertarget{list_8h_a0c872b2b5377622a0056fff4dde83d40}\index{list.h@{list.h}!Opaque@{Opaque}}
+\index{Opaque@{Opaque}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{Opaque}{Opaque}}
+{\footnotesize\ttfamily \label{list_8h_a0c872b2b5377622a0056fff4dde83d40} 
+typedef void\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_a0c872b2b5377622a0056fff4dde83d40}{Opaque}}}
+
+
+
+An opaque type. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{list_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{list_8h_a694b5a1d3f8f05d72bb6717d15167845}\index{list.h@{list.h}!ListOpaque\_at@{ListOpaque\_at}}
+\index{ListOpaque\_at@{ListOpaque\_at}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{ListOpaque\_at()}{ListOpaque\_at()}}
+{\footnotesize\ttfamily \label{list_8h_a694b5a1d3f8f05d72bb6717d15167845} 
+\mbox{\hyperlink{list_8h_a0c872b2b5377622a0056fff4dde83d40}{Opaque}} List\+Opaque\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}}}]{list}{, }\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+
+
+The indexing function for a List. 
+
+This will crash your program if you index outside of the List. INFO\+: the first index is 1. Similar\+: to \href{https://cppreference.com/w/cpp/container/vector/at.html}{\texttt{https\+://cppreference.\+com/w/cpp/container/vector/at.\+html}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the List to get the element from \\
+\hline
+{\em index} & the index of the element in the List \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the element at that index 
+\end{DoxyReturn}
+\Hypertarget{list_8h_ac62fb25336f13051d8228b1b20869bc0}\index{list.h@{list.h}!ListOpaque\_car@{ListOpaque\_car}}
+\index{ListOpaque\_car@{ListOpaque\_car}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{ListOpaque\_car()}{ListOpaque\_car()}}
+{\footnotesize\ttfamily \label{list_8h_ac62fb25336f13051d8228b1b20869bc0} 
+\mbox{\hyperlink{list_8h_a0c872b2b5377622a0056fff4dde83d40}{Opaque}} List\+Opaque\+\_\+car (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structNodeOpaque}{Node\+Opaque}}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Returns the element at the head of the List. 
+
+This exists in case you want a functional style.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & the node to get the head from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the element at the head of the List 
+\end{DoxyReturn}
+\Hypertarget{list_8h_acf88f78d257227d21d7196037922380a}\index{list.h@{list.h}!ListOpaque\_cdr@{ListOpaque\_cdr}}
+\index{ListOpaque\_cdr@{ListOpaque\_cdr}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{ListOpaque\_cdr()}{ListOpaque\_cdr()}}
+{\footnotesize\ttfamily \label{list_8h_acf88f78d257227d21d7196037922380a} 
+struct \mbox{\hyperlink{structNodeOpaque}{Node\+Opaque}} \texorpdfstring{$\ast$}{*} List\+Opaque\+\_\+cdr (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structNodeOpaque}{Node\+Opaque}}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Returns the rest of the List, ignoring the first element. 
+
+This exists in case you want a functional style.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & the node to get the list from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the rest of the List 
+\end{DoxyReturn}
+\Hypertarget{list_8h_a21ce50c0ff4101692631f1892f886188}\index{list.h@{list.h}!ListOpaque\_cons@{ListOpaque\_cons}}
+\index{ListOpaque\_cons@{ListOpaque\_cons}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{ListOpaque\_cons()}{ListOpaque\_cons()}}
+{\footnotesize\ttfamily \label{list_8h_a21ce50c0ff4101692631f1892f886188} 
+\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}} List\+Opaque\+\_\+cons (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a0c872b2b5377622a0056fff4dde83d40}{Opaque}}}]{fst}{, }\item[{\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}}}]{list}{}\end{DoxyParamCaption})}
+
+
+
+Prepend an element to the List. 
+
+This is the main way of actually creating lists. For more information you can visit\+: \href{https://hackage.haskell.org/package/base-4.21.0.0/docs/Data-List.html\#t:List}{\texttt{https\+://hackage.\+haskell.\+org/package/base-\/4.\+21.\+0.\+0/docs/\+Data-\/\+List.\+html\#t\+:\+List}} INFO\+: Caller must free memory
+
+
+\begin{DoxyParams}{Parameters}
+{\em fst} & the element you want to prepend \\
+\hline
+{\em list} & the list you want to prepend to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a List where the first element is fst and the rest of the List is list 
+\end{DoxyReturn}
+\Hypertarget{list_8h_aee614062180456aa1575288c1d49d5c9}\index{list.h@{list.h}!ListOpaque\_deinit@{ListOpaque\_deinit}}
+\index{ListOpaque\_deinit@{ListOpaque\_deinit}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{ListOpaque\_deinit()}{ListOpaque\_deinit()}}
+{\footnotesize\ttfamily \label{list_8h_aee614062180456aa1575288c1d49d5c9} 
+void List\+Opaque\+\_\+deinit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}}}]{list}{}\end{DoxyParamCaption})}
+
+
+
+Deinitialize the List. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the List to deinitialize \\
+\hline
+\end{DoxyParams}
+\Hypertarget{list_8h_a1da6947b16c73dbad26bd460a0e13162}\index{list.h@{list.h}!ListOpaque\_length@{ListOpaque\_length}}
+\index{ListOpaque\_length@{ListOpaque\_length}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{ListOpaque\_length()}{ListOpaque\_length()}}
+{\footnotesize\ttfamily \label{list_8h_a1da6947b16c73dbad26bd460a0e13162} 
+size\+\_\+t List\+Opaque\+\_\+length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}}}]{list}{}\end{DoxyParamCaption})}
+
+
+
+Returns the length of the List. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the List that you want the length for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the length of that List 
+\end{DoxyReturn}
+\Hypertarget{list_8h_a41aa415f1fa90e41fee81ec7e4f16359}\index{list.h@{list.h}!ListOpaque\_rev@{ListOpaque\_rev}}
+\index{ListOpaque\_rev@{ListOpaque\_rev}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{ListOpaque\_rev()}{ListOpaque\_rev()}}
+{\footnotesize\ttfamily \label{list_8h_a41aa415f1fa90e41fee81ec7e4f16359} 
+\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}} List\+Opaque\+\_\+rev (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}}}]{list}{, }\item[{\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}}}]{acc}{}\end{DoxyParamCaption})}
+
+
+
+Helper function for List\+Opaque\+\_\+reverse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the List that is being reversed \\
+\hline
+{\em acc} & the accumulator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reversed List 
+\end{DoxyReturn}
+\Hypertarget{list_8h_ad4ed0e3b3f346f7304bf7af96f391ec7}\index{list.h@{list.h}!ListOpaque\_reverse@{ListOpaque\_reverse}}
+\index{ListOpaque\_reverse@{ListOpaque\_reverse}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{ListOpaque\_reverse()}{ListOpaque\_reverse()}}
+{\footnotesize\ttfamily \label{list_8h_ad4ed0e3b3f346f7304bf7af96f391ec7} 
+\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}} List\+Opaque\+\_\+reverse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a0204e4415d9108263d3d986289c659fb}{List\+Opaque}}}]{list}{}\end{DoxyParamCaption})}
+
+
+
+Reverses a List. 
+
+Implementation taken from\+: \href{https://hackage.haskell.org/package/base-4.21.0.0/docs/Data-List.html\#v:reverse}{\texttt{https\+://hackage.\+haskell.\+org/package/base-\/4.\+21.\+0.\+0/docs/\+Data-\/\+List.\+html\#v\+:reverse}} INFO\+: Memory is freed for caller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the List to reverse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reversed List 
+\end{DoxyReturn}

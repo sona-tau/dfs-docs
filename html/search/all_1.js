@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['bid_0',['bid',['../df/d68/structBlock.html#a9b229e5553be31de07a9421f3d77a348',1,'Block']]],
+  ['block_1',['Block',['../df/d68/structBlock.html',1,'']]],
+  ['block_2',['block',['../df/d1f/structBlockLocation.html#aea246f876e1d1fc11852e6fd7d0ed1e6',1,'BlockLocation']]],
+  ['block_2ec_3',['block.c',['../d3/d1c/block_8c.html',1,'']]],
+  ['block_2eh_4',['block.h',['../de/d40/block_8h.html',1,'']]],
+  ['block_5fdeserialize_5',['Block_deserialize',['../d3/d1c/block_8c.html#afca19c79d7b743389f93c15a4d392661',1,'Block_deserialize(Buffer buf):&#160;block.c'],['../de/d40/block_8h.html#a1aebff81374f63da7e64622d7bba5094',1,'Block_deserialize(Buffer buffer):&#160;block.c']]],
+  ['block_5fget_5fdb_6',['Block_get_db',['../d3/d1c/block_8c.html#afb7216b1a3653ec46941c71d1c762931',1,'Block_get_db(void):&#160;block.c'],['../de/d40/block_8h.html#afb7216b1a3653ec46941c71d1c762931',1,'Block_get_db(void):&#160;block.c']]],
+  ['block_5fset_5fdb_7',['Block_set_db',['../d3/d1c/block_8c.html#af52b3fe05781a9b2e0c45fcc1e2b6229',1,'Block_set_db(ListBlock blocks):&#160;block.c'],['../de/d40/block_8h.html#af52b3fe05781a9b2e0c45fcc1e2b6229',1,'Block_set_db(ListBlock blocks):&#160;block.c']]],
+  ['block_5ftable_8',['BLOCK_TABLE',['../de/d40/block_8h.html#aae267209d11547d50a511c03ac5033d4',1,'block.h']]],
+  ['blockassoc_9',['BlockAssoc',['../da/d34/structBlockAssoc.html',1,'']]],
+  ['blocklocation_10',['BlockLocation',['../df/d1f/structBlockLocation.html',1,'']]],
+  ['blocklocationinfo_11',['BlockLocationInfo',['../d0/d2c/testdb_8c.html#a9de1ed0eba32111aa2d883ce05ff5571',1,'testdb.c']]],
+  ['buf_12',['buf',['../d6/d3a/structBuffer.html#a4ff8cd56bcbabbe3f65391f83d2c871a',1,'Buffer']]],
+  ['buf_5flen_13',['BUF_LEN',['../dd/dac/copy_8c.html#a8b5839f71a3b6e7d64b2d5e9967e3dd1',1,'BUF_LEN:&#160;copy.c'],['../df/d2e/data-node_8c.html#a8b5839f71a3b6e7d64b2d5e9967e3dd1',1,'BUF_LEN:&#160;data-node.c'],['../d6/db1/list__str_8c.html#a8b5839f71a3b6e7d64b2d5e9967e3dd1',1,'BUF_LEN:&#160;list_str.c'],['../de/d77/ls_8c.html#a8b5839f71a3b6e7d64b2d5e9967e3dd1',1,'BUF_LEN:&#160;ls.c'],['../d2/df8/meta-data_8c.html#a8b5839f71a3b6e7d64b2d5e9967e3dd1',1,'BUF_LEN:&#160;meta-data.c']]],
+  ['bufcpy_14',['bufcpy',['../de/dd7/lib_8c.html#afaecb440ef2d0c34f43d5254d5a36b4d',1,'bufcpy(Buffer src):&#160;lib.c'],['../de/d14/lib_8h.html#aa82a9584462ff3fe04acdb64c02517ca',1,'bufcpy(Buffer in):&#160;lib.c']]],
+  ['buffer_15',['Buffer',['../d6/d3a/structBuffer.html',1,'']]],
+  ['buffer_5fdeinit_16',['Buffer_deinit',['../de/dd7/lib_8c.html#abea6c77ac79ee2ff6259366f1e95becc',1,'Buffer_deinit(Buffer kod):&#160;lib.c'],['../de/d14/lib_8h.html#abea6c77ac79ee2ff6259366f1e95becc',1,'Buffer_deinit(Buffer kod):&#160;lib.c']]],
+  ['buffer_5fdeserialize_17',['Buffer_deserialize',['../de/dd7/lib_8c.html#abf1ac083dd4b229fcd24e742dbb8be80',1,'Buffer_deserialize(Buffer buf):&#160;lib.c'],['../de/d14/lib_8h.html#abf1ac083dd4b229fcd24e742dbb8be80',1,'Buffer_deserialize(Buffer buf):&#160;lib.c']]],
+  ['buffer_5fread_18',['Buffer_read',['../de/dd7/lib_8c.html#a6e3b3a962ce386c662c53fe3552443de',1,'Buffer_read(FILE *f):&#160;lib.c'],['../de/d14/lib_8h.html#a6e3b3a962ce386c662c53fe3552443de',1,'Buffer_read(FILE *f):&#160;lib.c']]],
+  ['buffer_5fserialize_19',['Buffer_serialize',['../de/dd7/lib_8c.html#a51bed6025eb58730de18765ca2345b81',1,'Buffer_serialize(Buffer buf):&#160;lib.c'],['../de/d14/lib_8h.html#a51bed6025eb58730de18765ca2345b81',1,'Buffer_serialize(Buffer buf):&#160;lib.c']]],
+  ['buffer_5fwrite_20',['Buffer_write',['../de/dd7/lib_8c.html#aa1b70d8019362ca051b93f53af180195',1,'Buffer_write(Buffer buf, FILE *f):&#160;lib.c'],['../de/d14/lib_8h.html#aa1b70d8019362ca051b93f53af180195',1,'Buffer_write(Buffer buf, FILE *f):&#160;lib.c']]],
+  ['byte_21',['Byte',['../de/d14/lib_8h.html#a7ae8f3766c8853286755f4ec0903c6f0',1,'lib.h']]],
+  ['bytes_22',['bytes',['../de/d5f/unionIPv4.html#a6bdf7c7dc3dc17bb9f355833821a025e',1,'IPv4']]]
+];

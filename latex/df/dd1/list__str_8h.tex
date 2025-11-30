@@ -1,0 +1,111 @@
+\doxysection{src/lib/list\+\_\+str.h File Reference}
+\hypertarget{list__str_8h}{}\label{list__str_8h}\index{src/lib/list\_str.h@{src/lib/list\_str.h}}
+{\ttfamily \#include "{}lib.\+h"{}}\newline
+{\ttfamily \#include "{}list.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{list__str_8h_a0d0fa4a6a5ad020337f4a4deca68ba2a}{Def\+List}} (\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}) List\+Str split(\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}} str
+\begin{DoxyCompactList}\small\item\em Split a string by a separator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list__str_8h_ae5c276a8f4a91417f8caf2b5a41c0f51}{List\+Str\+\_\+print}} (List\+Str \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}})
+\begin{DoxyCompactList}\small\item\em Print a List of Strings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{list__str_8h_afefa2c22924e4023bd241d54235491b3}{Def\+List}} (\mbox{\hyperlink{structSafeStr}{Safe\+Str}}) \mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{list__str_8c_a3607d5d2c18f4040997cfe091b31a0fc}{List\+Safe\+Str\+\_\+serialize}}(List\+Safe\+Str \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}})
+\begin{DoxyCompactList}\small\item\em Serialize a List of \doxylink{structSafeStr}{Safe\+Str} to a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\item 
+List\+Safe\+Str \mbox{\hyperlink{list__str_8h_aca6d212cf8b9de7c79f5a8e1f920b91d}{List\+Safe\+Str\+\_\+deserialize}} (\mbox{\hyperlink{structBuffer}{Buffer}} buf)
+\begin{DoxyCompactList}\small\item\em Deserialize a \doxylink{structSafeStr}{Safe\+Str} from a \doxylink{structBuffer}{Buffer}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{list__str_8h_a2f44b091be60ccdd664997eb163d2ff4}{sep}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{list__str_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{list__str_8h_afefa2c22924e4023bd241d54235491b3}\index{list\_str.h@{list\_str.h}!DefList@{DefList}}
+\index{DefList@{DefList}!list\_str.h@{list\_str.h}}
+\doxysubsubsection{\texorpdfstring{DefList()}{DefList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{list__str_8h_afefa2c22924e4023bd241d54235491b3} 
+Def\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSafeStr}{Safe\+Str}}}]{}{}\end{DoxyParamCaption})}
+
+
+
+Serialize a List of \doxylink{structSafeStr}{Safe\+Str} to a \doxylink{structBuffer}{Buffer}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the List of \doxylink{structSafeStr}{Safe\+Str} that you want to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{structBuffer}{Buffer} containing that List of \doxylink{structSafeStr}{Safe\+Str} 
+\end{DoxyReturn}
+\Hypertarget{list__str_8h_a0d0fa4a6a5ad020337f4a4deca68ba2a}\index{list\_str.h@{list\_str.h}!DefList@{DefList}}
+\index{DefList@{DefList}!list\_str.h@{list\_str.h}}
+\doxysubsubsection{\texorpdfstring{DefList()}{DefList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{list__str_8h_a0d0fa4a6a5ad020337f4a4deca68ba2a} 
+Def\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str}}}]{}{}\end{DoxyParamCaption})}
+
+
+
+Split a string by a separator. 
+
+This is very useful for parsing command line arguments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & the string to split \\
+\hline
+{\em sep} & the separator in he string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a List of \doxylink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str} where each \doxylink{lib_8h_a081d1c707b153da230e84f2d7ca93ef3}{Str} was separated by sep in str 
+\end{DoxyReturn}
+\Hypertarget{list__str_8h_aca6d212cf8b9de7c79f5a8e1f920b91d}\index{list\_str.h@{list\_str.h}!ListSafeStr\_deserialize@{ListSafeStr\_deserialize}}
+\index{ListSafeStr\_deserialize@{ListSafeStr\_deserialize}!list\_str.h@{list\_str.h}}
+\doxysubsubsection{\texorpdfstring{ListSafeStr\_deserialize()}{ListSafeStr\_deserialize()}}
+{\footnotesize\ttfamily \label{list__str_8h_aca6d212cf8b9de7c79f5a8e1f920b91d} 
+List\+Safe\+Str List\+Safe\+Str\+\_\+deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buf}{}\end{DoxyParamCaption})}
+
+
+
+Deserialize a \doxylink{structSafeStr}{Safe\+Str} from a \doxylink{structBuffer}{Buffer}. 
+
+WARNING\+: Do NOT deinitialize this using List\+Safe\+Str\+\_\+deinit. You must manually deinitialize the strings inside the list and then the whole list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & a \doxylink{structBuffer}{Buffer} containing the Safe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a List of \doxylink{structSafeStr}{Safe\+Str} 
+\end{DoxyReturn}
+\Hypertarget{list__str_8h_ae5c276a8f4a91417f8caf2b5a41c0f51}\index{list\_str.h@{list\_str.h}!ListStr\_print@{ListStr\_print}}
+\index{ListStr\_print@{ListStr\_print}!list\_str.h@{list\_str.h}}
+\doxysubsubsection{\texorpdfstring{ListStr\_print()}{ListStr\_print()}}
+{\footnotesize\ttfamily \label{list__str_8h_ae5c276a8f4a91417f8caf2b5a41c0f51} 
+void List\+Str\+\_\+print (\begin{DoxyParamCaption}\item[{List\+Str}]{list}{}\end{DoxyParamCaption})}
+
+
+
+Print a List of Strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the list to print \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-var-members}
+\Hypertarget{list__str_8h_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{list__str_8h_a2f44b091be60ccdd664997eb163d2ff4}\index{list\_str.h@{list\_str.h}!sep@{sep}}
+\index{sep@{sep}!list\_str.h@{list\_str.h}}
+\doxysubsubsection{\texorpdfstring{sep}{sep}}
+{\footnotesize\ttfamily \label{list__str_8h_a2f44b091be60ccdd664997eb163d2ff4} 
+char sep}
+

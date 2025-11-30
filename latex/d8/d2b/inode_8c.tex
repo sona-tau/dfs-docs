@@ -1,0 +1,177 @@
+\doxysection{src/lib/inode.c File Reference}
+\hypertarget{inode_8c}{}\label{inode_8c}\index{src/lib/inode.c@{src/lib/inode.c}}
+{\ttfamily \#include "{}inode.\+h"{}}\newline
+{\ttfamily \#include "{}list.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{inode_8c_a3acb6d5271b21129b9562db6f1fcc46f}{Impl\+List}} (\mbox{\hyperlink{structINode}{INode}})
+\item 
+List\+INode \mbox{\hyperlink{inode_8c_a5a9249dd2e6197aca44447edc6efc087}{List\+INode\+\_\+deserialize}} (\mbox{\hyperlink{structBuffer}{Buffer}} buf)
+\begin{DoxyCompactList}\small\item\em Deserialize a \doxylink{structBuffer}{Buffer} into a List of \doxylink{structINode}{INode}\textquotesingle{}s. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inode_8c_a6fa8a7eda01acdc03d5e20781b1c5d51}{List\+INode\+\_\+print}} (List\+INode \mbox{\hyperlink{meta-data_8c_a2a9555ea13e6b8fd8495995d9e4504f9}{list}})
+\begin{DoxyCompactList}\small\item\em Prints a List of \doxylink{structINode}{INode}\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{inode_8c_a190cae1508a7263501c63c91870d943e}{INode\+\_\+serialize}} (\mbox{\hyperlink{structINode}{INode}} in)
+\item 
+\mbox{\hyperlink{structINode}{INode}} \mbox{\hyperlink{inode_8c_a8171e0b24b5bac9bd864ad7cae07cd07}{INode\+\_\+deserialize}} (\mbox{\hyperlink{structBuffer}{Buffer}} buf)
+\begin{DoxyCompactList}\small\item\em Deserialize a \doxylink{structBuffer}{Buffer} into an \doxylink{structINode}{INode} Caller must free memory in \doxylink{structBlock_afbc128c4f66b70918d08ab663f8a5171}{Block.\+cid}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inode_8c_a9dd29a3f0501bd2237ccb125b6d6353f}{insert\+\_\+into\+\_\+inode}} (\mbox{\hyperlink{structSafeStr}{Safe\+Str}} fname, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em INSERT into the \doxylink{structINode}{INode} table. \end{DoxyCompactList}\item 
+List\+INode \mbox{\hyperlink{inode_8c_ab97312ee6612820dd13fe4dbc2026ddc}{select\+\_\+from\+\_\+inode}} (\mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}fid, \mbox{\hyperlink{structSafeStr}{Safe\+Str}} \texorpdfstring{$\ast$}{*}fname, size\+\_\+t \texorpdfstring{$\ast$}{*}size)
+\begin{DoxyCompactList}\small\item\em SELECT from the \doxylink{structINode}{INode} table. \end{DoxyCompactList}\item 
+List\+INode \mbox{\hyperlink{inode_8c_a92a62fb0b3c30207562e008f6a537f20}{INode\+\_\+get\+\_\+db}} (void)
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{structINode}{INode} table from the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inode_8c_ac1dd66bbe5163cecedc71b65010fa365}{INode\+\_\+set\+\_\+db}} (List\+INode dnodes)
+\begin{DoxyCompactList}\small\item\em Write the database with the List of \doxylink{structINode}{INode}\textquotesingle{}s. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inode_8c_ad28662806bc63275a88c850fe5a163e9}{print\+\_\+inode}} (\mbox{\hyperlink{structINode}{INode}} inode)
+\begin{DoxyCompactList}\small\item\em Print an \doxylink{structINode}{INode}\textquotesingle{}s data as a tuple. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{inode_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{inode_8c_a3acb6d5271b21129b9562db6f1fcc46f}\index{inode.c@{inode.c}!ImplList@{ImplList}}
+\index{ImplList@{ImplList}!inode.c@{inode.c}}
+\doxysubsubsection{\texorpdfstring{ImplList()}{ImplList()}}
+{\footnotesize\ttfamily \label{inode_8c_a3acb6d5271b21129b9562db6f1fcc46f} 
+Impl\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structINode}{INode}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{inode_8c_a8171e0b24b5bac9bd864ad7cae07cd07}\index{inode.c@{inode.c}!INode\_deserialize@{INode\_deserialize}}
+\index{INode\_deserialize@{INode\_deserialize}!inode.c@{inode.c}}
+\doxysubsubsection{\texorpdfstring{INode\_deserialize()}{INode\_deserialize()}}
+{\footnotesize\ttfamily \label{inode_8c_a8171e0b24b5bac9bd864ad7cae07cd07} 
+\mbox{\hyperlink{structINode}{INode}} INode\+\_\+deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buf}{}\end{DoxyParamCaption})}
+
+
+
+Deserialize a \doxylink{structBuffer}{Buffer} into an \doxylink{structINode}{INode} Caller must free memory in \doxylink{structBlock_afbc128c4f66b70918d08ab663f8a5171}{Block.\+cid}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The \doxylink{structBuffer}{Buffer} you want to deserialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{structINode}{INode} that the \doxylink{structBuffer}{Buffer} represents 
+\end{DoxyReturn}
+\Hypertarget{inode_8c_a92a62fb0b3c30207562e008f6a537f20}\index{inode.c@{inode.c}!INode\_get\_db@{INode\_get\_db}}
+\index{INode\_get\_db@{INode\_get\_db}!inode.c@{inode.c}}
+\doxysubsubsection{\texorpdfstring{INode\_get\_db()}{INode\_get\_db()}}
+{\footnotesize\ttfamily \label{inode_8c_a92a62fb0b3c30207562e008f6a537f20} 
+List\+INode INode\+\_\+get\+\_\+db (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get the \doxylink{structINode}{INode} table from the database. 
+
+\begin{DoxyReturn}{Returns}
+a List of \doxylink{structINode}{INode}\textquotesingle{}s 
+\end{DoxyReturn}
+\Hypertarget{inode_8c_a190cae1508a7263501c63c91870d943e}\index{inode.c@{inode.c}!INode\_serialize@{INode\_serialize}}
+\index{INode\_serialize@{INode\_serialize}!inode.c@{inode.c}}
+\doxysubsubsection{\texorpdfstring{INode\_serialize()}{INode\_serialize()}}
+{\footnotesize\ttfamily \label{inode_8c_a190cae1508a7263501c63c91870d943e} 
+\mbox{\hyperlink{structBuffer}{Buffer}} INode\+\_\+serialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structINode}{INode}}}]{in}{}\end{DoxyParamCaption})}
+
+\Hypertarget{inode_8c_ac1dd66bbe5163cecedc71b65010fa365}\index{inode.c@{inode.c}!INode\_set\_db@{INode\_set\_db}}
+\index{INode\_set\_db@{INode\_set\_db}!inode.c@{inode.c}}
+\doxysubsubsection{\texorpdfstring{INode\_set\_db()}{INode\_set\_db()}}
+{\footnotesize\ttfamily \label{inode_8c_ac1dd66bbe5163cecedc71b65010fa365} 
+void INode\+\_\+set\+\_\+db (\begin{DoxyParamCaption}\item[{List\+INode}]{inodes}{}\end{DoxyParamCaption})}
+
+
+
+Write the database with the List of \doxylink{structINode}{INode}\textquotesingle{}s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inodes} & the List of \doxylink{structINode}{INode}\textquotesingle{}s that you want to overwrite the database with \\
+\hline
+\end{DoxyParams}
+\Hypertarget{inode_8c_a9dd29a3f0501bd2237ccb125b6d6353f}\index{inode.c@{inode.c}!insert\_into\_inode@{insert\_into\_inode}}
+\index{insert\_into\_inode@{insert\_into\_inode}!inode.c@{inode.c}}
+\doxysubsubsection{\texorpdfstring{insert\_into\_inode()}{insert\_into\_inode()}}
+{\footnotesize\ttfamily \label{inode_8c_a9dd29a3f0501bd2237ccb125b6d6353f} 
+void insert\+\_\+into\+\_\+inode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSafeStr}{Safe\+Str}}}]{fname}{, }\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+INSERT into the \doxylink{structINode}{INode} table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & the name of the file \\
+\hline
+{\em size} & the size of the file in \doxylink{lib_8h_a7ae8f3766c8853286755f4ec0903c6f0}{Byte}\textquotesingle{}s \\
+\hline
+\end{DoxyParams}
+\Hypertarget{inode_8c_a5a9249dd2e6197aca44447edc6efc087}\index{inode.c@{inode.c}!ListINode\_deserialize@{ListINode\_deserialize}}
+\index{ListINode\_deserialize@{ListINode\_deserialize}!inode.c@{inode.c}}
+\doxysubsubsection{\texorpdfstring{ListINode\_deserialize()}{ListINode\_deserialize()}}
+{\footnotesize\ttfamily \label{inode_8c_a5a9249dd2e6197aca44447edc6efc087} 
+List\+INode List\+INode\+\_\+deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}}}]{buf}{}\end{DoxyParamCaption})}
+
+
+
+Deserialize a \doxylink{structBuffer}{Buffer} into a List of \doxylink{structINode}{INode}\textquotesingle{}s. 
+
+Caller must free memory in \doxylink{structBlock_afbc128c4f66b70918d08ab663f8a5171}{Block.\+cid}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The \doxylink{structBuffer}{Buffer} you want to deserialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The List of \doxylink{structINode}{INode}\textquotesingle{}s that the \doxylink{structBuffer}{Buffer} represents 
+\end{DoxyReturn}
+\Hypertarget{inode_8c_a6fa8a7eda01acdc03d5e20781b1c5d51}\index{inode.c@{inode.c}!ListINode\_print@{ListINode\_print}}
+\index{ListINode\_print@{ListINode\_print}!inode.c@{inode.c}}
+\doxysubsubsection{\texorpdfstring{ListINode\_print()}{ListINode\_print()}}
+{\footnotesize\ttfamily \label{inode_8c_a6fa8a7eda01acdc03d5e20781b1c5d51} 
+void List\+INode\+\_\+print (\begin{DoxyParamCaption}\item[{List\+INode}]{list}{}\end{DoxyParamCaption})}
+
+
+
+Prints a List of \doxylink{structINode}{INode}\textquotesingle{}s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the List of \doxylink{structINode}{INode}\textquotesingle{}s that you want to print \\
+\hline
+\end{DoxyParams}
+\Hypertarget{inode_8c_ad28662806bc63275a88c850fe5a163e9}\index{inode.c@{inode.c}!print\_inode@{print\_inode}}
+\index{print\_inode@{print\_inode}!inode.c@{inode.c}}
+\doxysubsubsection{\texorpdfstring{print\_inode()}{print\_inode()}}
+{\footnotesize\ttfamily \label{inode_8c_ad28662806bc63275a88c850fe5a163e9} 
+void print\+\_\+inode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structINode}{INode}}}]{inode}{}\end{DoxyParamCaption})}
+
+
+
+Print an \doxylink{structINode}{INode}\textquotesingle{}s data as a tuple. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inode} & the \doxylink{structINode}{INode} to be printed \\
+\hline
+\end{DoxyParams}
+\Hypertarget{inode_8c_ab97312ee6612820dd13fe4dbc2026ddc}\index{inode.c@{inode.c}!select\_from\_inode@{select\_from\_inode}}
+\index{select\_from\_inode@{select\_from\_inode}!inode.c@{inode.c}}
+\doxysubsubsection{\texorpdfstring{select\_from\_inode()}{select\_from\_inode()}}
+{\footnotesize\ttfamily \label{inode_8c_ab97312ee6612820dd13fe4dbc2026ddc} 
+List\+INode select\+\_\+from\+\_\+inode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structUUID}{UUID}} \texorpdfstring{$\ast$}{*}}]{fid}{, }\item[{\mbox{\hyperlink{structSafeStr}{Safe\+Str}} \texorpdfstring{$\ast$}{*}}]{fname}{, }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{size}{}\end{DoxyParamCaption})}
+
+
+
+SELECT from the \doxylink{structINode}{INode} table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fid} & the \doxylink{structINode}{INode}\textquotesingle{}s \doxylink{structUUID}{UUID} or NULL \\
+\hline
+{\em fname} & the \doxylink{structINode}{INode}\textquotesingle{}s file\textquotesingle{}s name or NULL @praam size the size of the file or NULL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a List\+INode of the possible matches 
+\end{DoxyReturn}
